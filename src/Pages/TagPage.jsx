@@ -1,9 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import './Home.css';
 import Card from '../Components/Card/index';
 import CoverImage from '../CoverImage/index';
-import './TagPage.css';
 
 const apiUrl = process.env.REACT_APP_BACKEND_URL;
 

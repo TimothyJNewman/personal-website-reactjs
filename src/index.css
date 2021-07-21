@@ -206,11 +206,11 @@ code {
 }
 
 .markdown-text ul > li:before{
-  font-family: FontAwesome;
+  font-family: "Font Awesome 5 Free";
   font-size: 1em;
   content: "\f101";
   position:relative;
-  padding: 0.1em 0.85em 0.1em 0.85em;
+  padding: 0.1em 0.55em 0.1em 0.55em;
   color: var(--linktext);
   font-weight: bold;
 }

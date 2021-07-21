@@ -1,7 +1,6 @@
 import React from "react";
 import { isEmail, sanitizeKeepUnicode } from "../Util/StringValidator";
 import CoverImage from '../CoverImage/index';
-import './Contact.css';
 
 const apiUrl = process.env.REACT_APP_BACKEND_URL;
 

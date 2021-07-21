@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import './Home.css';
 import Card from '../Components/Card/index';
 import MarkdownView from 'react-showdown';
 
