@@ -1,12 +1,12 @@
-.App-footer {
-  background-color: var(--themecolour-d2);
+.footer {
+  background-color: var(--primarycolour-d2);
   min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(0.75rem + 0.9vmin);
-  color: var(--lighttext);
+  color: var(--primarycolour-l5);
 }
 
 .footer-copyright{

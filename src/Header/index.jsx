@@ -9,10 +9,10 @@ function Header() {
   const [menuExpanded, toggleMenuExpansion] = useState(false);
   return (
     <div>
-      <header className="App-header">
-        <div className="App-header-wrapper">
+      <header className="header">
+        <div className="header-wrapper">
           <button
-              className="App-button-nav"
+              className="button-nav"
               aria-label="Toggle Menu"
               onClick={() => {
                 toggleMenuExpansion(!menuExpanded);
@@ -22,13 +22,13 @@ function Header() {
           <a href="/" >
           <div className="title-and-subtitle">
           <div className="header-logo-container"><img className="header-logo" src={logo} alt="logo"></img></div>
-          <h1 className="App-title">
-             Timothy Jabez <span className="App-title-surname"> Newman </span>
+          <h1 className="title">
+             Timothy Jabez <span className="title-surname"> Newman </span>
           </h1> 
-          <h2 className="App-subtitle">Personal Website</h2>
+          <h2 className="subtitle">Personal Website</h2>
           </div>
             </a>
-        <div className="App-nav-header">
+        <div className="nav-header">
             <ButtonHeader 
               textValue = "Home"
               linkValue = "./"

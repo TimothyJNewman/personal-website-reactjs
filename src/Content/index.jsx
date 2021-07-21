@@ -9,8 +9,8 @@ function Content(){
     window.scrollTo(0, 0);     
     }, [location]);
     return (
-        <div className="App-content-wrapper">
-          <div className="App-content">
+        <div className="content-wrapper">
+          <div className="content">
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/about" exact component={About} />

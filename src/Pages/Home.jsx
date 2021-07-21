@@ -86,7 +86,7 @@ class Home extends React.Component {
   return (
     <div className="home">
       <div className="medium-col">
-      <div className="App-blog-intro">
+      <div className="blog-intro">
           <div className="intro-container"> 
           <div className="welcome-text-and-socials">
           <MarkdownView className="markdown-text"
@@ -104,7 +104,7 @@ class Home extends React.Component {
       </div>
       <div className="medium-col">
         <br />
-        <h2 className="App-blog-postlist-title">Recent Projects</h2>
+        <h2 className="blog-postlist-title">Recent Projects</h2>
         <div className="Card-container">
           {         this.state.projectPosts.map(posts => (
             <Link to={this.formatLink("/projects?slug=",posts.slug)} key={posts.id}>
@@ -125,7 +125,7 @@ class Home extends React.Component {
         </p>
       </div>
       <div className="medium-col">
-        <h2 className="App-blog-postlist-title">Recent Blog Posts</h2>
+        <h2 className="blog-postlist-title">Recent Blog Posts</h2>
         <div className="Card-container">
           {         this.state.blogPosts.map(posts => (
             <Link to={this.formatLink("/blog?slug=",posts.slug)} key={posts.id}>

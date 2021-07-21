@@ -1,8 +1,8 @@
-.App-button-header{
+.button-header{
   background-color: inherit;
   background: 
-    linear-gradient(var(--lightgreenfullopacity), var(--lightgreenfullopacity)),
-    linear-gradient(var(--lightgreenfullopacity), var(--lightgreenfullopacity));
+    linear-gradient(var(--secondarycolour-l1), var(--secondarycolour-l1)),
+    linear-gradient(var(--secondarycolour-l1), var(--secondarycolour-l1));
   background-size: 100% 0em, 0 0.2em;
   background-position: 100% 100%, 0% 100%;
   background-repeat: no-repeat;
@@ -18,14 +18,13 @@
   transition : background-size 400ms;
 }
 
-.App-button-header:hover, .App-button-header:focus{
-    /*background-color: var(--themecolour-l3);*/
+.button-header:hover, .button-header:focus{
   background-size: 0 0em, 100% 0.2em;
-  color: var(--lightgreenfullopacity);
+  color: var(--secondarycolour-l1);
 }
 
 @media only screen and (max-width: 800px) {
-    .App-button-header{
+    .button-header{
         display: none;
     }
 }

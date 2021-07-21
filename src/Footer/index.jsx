@@ -3,7 +3,7 @@ import Nav from '../DropdownMenu/index';
 
 function Footer() {
   return (
-      <footer className="App-footer">
+      <footer className="footer">
         <p className="footer-copyright">
           © 2021 Timothy Jabez Newman. All rights reserved.
         </p>

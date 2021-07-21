@@ -99,7 +99,7 @@ class TagPage extends React.Component {
     <>
     <CoverImage title={"Tag: "+this.returnApiSlugURL()} desc={" | Projects: "+this.state.projectPosts.length+" | Blog: "+this.state.blogPosts.length} />
       <div className="medium-col">
-        <h2 className="App-blog-postlist-title">Recent Projects</h2>
+        <h2 className="blog-postlist-title">Recent Projects</h2>
         {projectError ? <p className="error-message">No projects found</p> :""}
         <div className="Card-container">
           {         this.state.projectPosts.map(posts => (
@@ -121,7 +121,7 @@ class TagPage extends React.Component {
         </p>
       </div>
       <div className="medium-col">
-        <h2 className="App-blog-postlist-title">Recent Blog Posts</h2>
+        <h2 className="blog-postlist-title">Recent Blog Posts</h2>
         {blogError ? <p className="error-message">No blog posts found</p> :""}
         <div className="Card-container">
           {         this.state.blogPosts.map(posts => (
@@ -142,7 +142,7 @@ class TagPage extends React.Component {
         </p>
       </div>
     <div className="medium-col">
-      <h2 className="App-blog-postlist-title">All Tags</h2>
+      <h2 className="blog-postlist-title">All Tags</h2>
       <div className="card-tag-container-tagpage">
     {this.state.tagList.map(elem => (
       <Link to={"/tagpage?tag="+elem.Tag} key={elem.id} className="card-tag-link"><div className="card-tag">{elem.Tag} </div></Link>))}

@@ -6,7 +6,7 @@ class ButtonHeader extends React.Component {
   render(){
     return (
       <Link to={this.props.linkValue}>
-        <button className="App-button-header">
+        <button className="button-header">
           {this.props.textValue}  
         </button>
       </Link>
