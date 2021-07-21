@@ -1,0 +1,82 @@
+.Card-container{
+  width:inherit;
+  margin-left: auto;
+  margin-right: auto;
+  /*max-height: 170vmin;*/
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  /*grid-template-rows: 1fr 1fr ;*/
+  grid-gap: min(1em, 3vmin) min(1em, 3vmin);
+}
+
+.intro-container{
+  /*background-color: var(--themecolour-l4);*/
+  background-image: linear-gradient(10deg, var(--themecolour-l3), var(--themecolour-l4));
+  max-width: 55%;
+  padding: calc(0.3em + 1vmin);
+  border-radius: 5px;
+  margin-left: auto;
+  height: 100%;
+  align-self: center;
+  font-size: calc(0.5em + 1.5vmin);
+  align-content: center;
+  opacity: 92%;
+}
+
+.social-media-icon-container a{
+  width: 1.3em;
+}
+
+.social-media-icon-container img{
+  height: 1.2em;
+  margin: 0.2em;
+}
+
+.App-blog-intro{
+  min-width: 240px;
+  min-height: 40vh;
+  border-radius: 5px;
+  width:inherit;
+  background-position: center;
+  background-image: url(../Images/large_profilepicv3_81bd297485.jpg);
+  background-size: cover;
+  padding: min(1em, 3vmin);
+  padding-right: min(2em, 3vmin);
+  display: flex;
+  animation: 0.3s fadeIn both ease-in; 
+}
+
+.profile-pic{
+  border-radius: inherit;
+  width: 100%;
+}
+
+.App-blog-postlist-title{
+  margin-left: 5px;
+  margin-block-start: 10px;
+  margin-block-end: 15px;
+  display: flex;
+  justify-self: start;
+}
+
+.Card-readmore{
+  margin: 12px 8px 5px 5px;
+  display: flex;
+  justify-content: flex-end;
+  color: var(--themecolour-d4);
+}
+
+.Card-readmore a{
+  background: 
+    linear-gradient(var(--linktext), var(--linktext)),
+    linear-gradient(var(--linktext), var(--linktext));
+  background-size: 0 0.15em, 0 0.15em;
+  background-position: 0% 100%, 0% 100%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms;
+}
+
+.Card-readmore a:hover,
+.Card-readmore a:focus {
+  background-size: 0 0.15em, 88% 0.15em;
+}

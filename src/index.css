@@ -1,4 +1,30 @@
-body {
+:root{
+  --themecolour-l5: #fbf3ed;
+  --themecolour-l4: #f3d8c4;
+  --themecolour-l3: #e6b189;
+  --themecolour-l2: #da8b4e;
+  --themecolour-l1: #b96627;
+  --themecolour: #80461b;
+  --themecolour-d1: #723f18;
+  --themecolour-d2: #653815;
+  --themecolour-d3: #583113;
+  --themecolour-d4: #4c2a10;
+  --themecolour-d5: #3f230d;
+  --themecolour-d6: #1a0c01;
+  
+  --darktext: #000000;
+  --lighttextsub: #e6b189;
+  --lighttext: #FFFFFF;
+  --linktext: rgba(5, 153, 126, 1);
+  --linktextbackground: rgba(5, 153, 126, 0.7);
+  --dategrey: #404040;
+  --lightgreenfullopacity: #08cfaaff;
+  --lightgreen: rgba(5, 153, 126, 0.1);
+  --errorcolor: rgba(240, 26, 35, 1);
+  --errorcolorbackground: rgba(240, 26, 35, 0.7);
+}
+
+body, div, button{
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -7,7 +33,191 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+h1{
+  font-weight: 600;
+  font-size: calc(15px + 3vmin);
+}
+
+h2{
+  font-weight: 500;
+  font-size: 1.3em;
+}
+
+h3{
+  font-weight: 500;
+  font-size: 1em;
+}
+
+p{
+  font-weight: 400;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+ a, a:hover, a:focus, a:active {
+      text-decoration: none;
+      color: inherit;
+ }
+
+.bg-color-secondary {
+    background-color: blueviolet;
+}
+
+.error-message{
+  color: var(--lighttext);
+  background-color: var(--errorcolorbackground);
+  border: 2px solid var(--errorcolor);
+  border-radius: 5px;
+  padding: 2px 8px;
+}
+
+.success-message{
+  color: var(--lighttext);
+  background-color: var(--linktextbackground);
+  border: 2px solid var(--linktext);
+  border-radius: 5px;
+  padding: 2px 8px;
+}
+
+/* 
+  markdown formatting
+*/
+
+.markdown-text h2,h3,h4,h5{
+  margin-top: 0.6em;
+  margin-bottom: 0.4em;
+}
+
+.markdown-text p{
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.markdown-text img{
+  width: 100%;
+  height:auto;
+  border-radius: 5px;
+}
+
+.markdown-text video{
+  width: 100%;
+  height:auto;
+  border-radius: 5px;
+}
+
+.markdown-text strong,em,u{
+  color: var(--themecolour-d3);
+}
+
+.markdown-text strong{
+  font-weight: 500;
+}
+
+.markdown-text a {
+  color: var(--themecolour-d2);
+  background: 
+    linear-gradient(var(--linktext), var(--linktext)),
+    linear-gradient(var(--linktext), var(--linktext));
+  background-size: 100% 0.1em, 0 1em;
+  background-position: 0% 100%, 0% 100%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms, color 400ms;
+}
+
+.markdown-text a:hover,
+.markdown-text a:focus {
+  background-size: 0 0.1em, 100% 1.2em;
+  color: var(--themecolour-l5);
+}
+
+@media only screen and (max-width: 768px) {
+  .markdown-text > div > blockquote {
+    margin-right:0;
+  }
+}
+
+@media only screen and (min-width:768px) {
+  .markdown-text > div > blockquote {
+    margin-right:30px;
+  }  
+}
+
+.markdown-text > div > blockquote {
+  margin-left: 0;
+  padding-right: 0.5em;
+  padding-left: 2em;
+  padding-top: 0.4em;
+  padding-bottom: 0.4em;
+  border-left: 5px solid var(--themecolour-l3);
+  background-color: var(--lightgreen);
+  border-radius: 5px;
+}
+
+.markdown-text blockquote p{
+  font-style: italic;
+  font-weight: 500;
+  color: var(--themecolour-d5);
+}
+
+.markdown-text ol{
+  counter-reset: li; /* Initiate a counter */
+  list-style: none; /* Remove default numbering */
+  *list-style: decimal; /* Keep using default numbering for IE6/7 */
+  padding-left:calc(0.1em + 0.5vw);
+  font-size: 0.95em;
+  /*border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  padding-top: 10px;
+  padding-bottom: 0px;
+  margin: 0;*/
+}
+
+.markdown-text ol > li{
+  margin-bottom: 0.5em;
+  display: flex;
+  align-items: flex-start;
+}
+
+.markdown-text ol > li:before{
+  content: counter(li);
+  counter-increment: li;
+  background-color: var(--linktext);
+  position:relative;
+  right: 0.5em;
+  padding: 0.1em 0.5em 0.1em 0.5em;
+  border-radius: 50%;
+  color: var(--themecolour-l5);
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.markdown-text ul{
+  padding-left: 0;
+  font-size: 0.9em;
+}
+
+.markdown-text ul > li{
+  margin-bottom: 0.5em;
+  display: flex;
+  align-items: flex-start;
+}
+
+.markdown-text ul > li:before{
+  font-family: FontAwesome;
+  font-size: 1em;
+  content: "\f101";
+  position:relative;
+  padding: 0.1em 0.85em 0.1em 0.85em;
+  color: var(--linktext);
+  font-weight: bold;
+}
+
+/* Fade in keyframes */
+
+@keyframes fadeIn {
+   from    { opacity: 0; }
+   to      { opacity: 1; }
 }
