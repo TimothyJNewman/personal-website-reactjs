@@ -1,27 +1,26 @@
 :root{
-  --themecolour-l5: #fbf3ed;
-  --themecolour-l4: #f3d8c4;
-  --themecolour-l3: #e6b189;
-  --themecolour-l2: #da8b4e;
-  --themecolour-l1: #b96627;
-  --themecolour: #80461b;
-  --themecolour-d1: #723f18;
-  --themecolour-d2: #653815;
-  --themecolour-d3: #583113;
-  --themecolour-d4: #4c2a10;
-  --themecolour-d5: #3f230d;
-  --themecolour-d6: #1a0c01;
+  --primarycolour-l5: #fbf3ed;
+  --primarycolour-l4: #f3d8c4;
+  --primarycolour-l3: #e6b189;
+  --primarycolour-l2: #da8b4e;
+  --primarycolour-l1: #b96627;
+  --primarycolour-l0: #80461b;
+  --primarycolour-d1: #723f18;
+  --primarycolour-d2: #653815;
+  --primarycolour-d3: #583113;
+  --primarycolour-d4: #4c2a10;
+  --primarycolour-d5: #3f230d;
+  --primarycolour-d6: #1a0c01;
   
-  --darktext: #000000;
-  --lighttextsub: #e6b189;
-  --lighttext: #FFFFFF;
-  --linktext: rgba(5, 153, 126, 1);
-  --linktextbackground: rgba(5, 153, 126, 0.7);
-  --dategrey: #404040;
-  --lightgreenfullopacity: #08cfaaff;
-  --lightgreen: rgba(5, 153, 126, 0.1);
+  --secondarycolour-l0: rgba(5, 153, 126, 1);
+  --secondarycolour-l1: rgba(8, 207, 171, 1);
+  --secondarycolourbackground: rgba(5, 153, 126, 0.7);
+  --secondarycolouroverlay: rgba(5, 153, 126, 0.1);
+
   --errorcolor: rgba(240, 26, 35, 1);
   --errorcolorbackground: rgba(240, 26, 35, 0.7);
+
+  --dategrey: #404040;
 }
 
 body, div, button{
@@ -67,7 +66,7 @@ code {
 }
 
 .error-message{
-  color: var(--lighttext);
+  color: var(--primarycolour-l5);
   background-color: var(--errorcolorbackground);
   border: 2px solid var(--errorcolor);
   border-radius: 5px;
@@ -75,15 +74,17 @@ code {
 }
 
 .success-message{
-  color: var(--lighttext);
-  background-color: var(--linktextbackground);
-  border: 2px solid var(--linktext);
+  color: var(--primarycolour-l5);
+  background-color: var(--secondarycolourbackground);
+  border: 2px solid var(--secondarycolour-l0);
   border-radius: 5px;
   padding: 2px 8px;
 }
 
 /* 
-  markdown formatting
+*
+*markdown formatting
+*
 */
 
 .markdown-text h2,h3,h4,h5{
@@ -109,7 +110,7 @@ code {
 }
 
 .markdown-text strong,em,u{
-  color: var(--themecolour-d3);
+  color: var(--primarycolour-d3);
 }
 
 .markdown-text strong{
@@ -117,10 +118,10 @@ code {
 }
 
 .markdown-text a {
-  color: var(--themecolour-d2);
+  color: var(--primarycolour-d2);
   background: 
-    linear-gradient(var(--linktext), var(--linktext)),
-    linear-gradient(var(--linktext), var(--linktext));
+    linear-gradient(var(--secondarycolour-l0), var(--secondarycolour-l0)),
+    linear-gradient(var(--secondarycolour-l0), var(--secondarycolour-l0));
   background-size: 100% 0.1em, 0 1em;
   background-position: 0% 100%, 0% 100%;
   background-repeat: no-repeat;
@@ -130,7 +131,7 @@ code {
 .markdown-text a:hover,
 .markdown-text a:focus {
   background-size: 0 0.1em, 100% 1.2em;
-  color: var(--themecolour-l5);
+  color: var(--primarycolour-l5);
 }
 
 @media only screen and (max-width: 768px) {
@@ -151,15 +152,15 @@ code {
   padding-left: 2em;
   padding-top: 0.4em;
   padding-bottom: 0.4em;
-  border-left: 5px solid var(--themecolour-l3);
-  background-color: var(--lightgreen);
+  border-left: 5px solid var(--primarycolour-l3);
+  background-color: var(--secondarycolouroverlay);
   border-radius: 5px;
 }
 
 .markdown-text blockquote p{
   font-style: italic;
   font-weight: 500;
-  color: var(--themecolour-d5);
+  color: var(--primarycolour-d5);
 }
 
 .markdown-text ol{
@@ -168,11 +169,6 @@ code {
   *list-style: decimal; /* Keep using default numbering for IE6/7 */
   padding-left:calc(0.1em + 0.5vw);
   font-size: 0.95em;
-  /*border-top: 2px solid black;
-  border-bottom: 2px solid black;
-  padding-top: 10px;
-  padding-bottom: 0px;
-  margin: 0;*/
 }
 
 .markdown-text ol > li{
@@ -184,12 +180,12 @@ code {
 .markdown-text ol > li:before{
   content: counter(li);
   counter-increment: li;
-  background-color: var(--linktext);
+  background-color: var(--secondarycolour-l0);
   position:relative;
   right: 0.5em;
   padding: 0.1em 0.5em 0.1em 0.5em;
   border-radius: 50%;
-  color: var(--themecolour-l5);
+  color: var(--primarycolour-l5);
   font-weight: bold;
   font-size: 1em;
 }
@@ -211,7 +207,7 @@ code {
   content: "\f101";
   position:relative;
   padding: 0.1em 0.55em 0.1em 0.55em;
-  color: var(--linktext);
+  color: var(--secondarycolour-l0);
   font-weight: bold;
 }
 
