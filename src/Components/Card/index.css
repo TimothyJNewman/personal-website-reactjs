@@ -3,10 +3,11 @@
   height: 100%;
   border-radius: 5px;
   background-image: linear-gradient(10deg, var(--primarycolour-l3), var(--primarycolour-l4));
+  background-color: var(--primarycolour-l4);
   /*background-color: var(--primarycolour-l3);*/
   box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
   animation: 0.2s fadeIn both ease-in; 
-  transition-duration: 0.5s;
+  transition: transform 0.5s;
   text-align: left;  
   overflow: hidden;
   display: flex;
@@ -14,6 +15,8 @@
 }
 
 .card:hover{
+  background-image: url(../../Images/floating-cogs.svg); 
+  /*background-image: linear-gradient(10deg, var(--primarycolour-l3), var(--primarycolour-l4));*/
   transform: scale(1.05);
 }
 
@@ -27,6 +30,7 @@
 }
 
 .card-contents{
+  color: var(--primarycolour-d6);
   padding: 20px 15px;
   display: flex;
   flex-direction: column;
@@ -59,15 +63,18 @@
 
 .card-tag{
   border-radius: 5px;
-  padding: 3px 10px 6px 10px;
+  padding: 1px 8px 4px 8px;
   margin: 1px;
-  color: var(--primarycolour-l5);
+  color: var(--primarycolour-l6);
   background-color: var(--primarycolour-d1);
   font-size: calc(0.6rem + 1.1vmin);
   display: inline;
+  border: 2px solid var(--primarycolour-d4);
 }
 
 .card-tag:hover{
-  background-color: var(--primarycolour-l4);
-  color: var(--primarycolour-d3);
+  /*background-color: var(--primarycolour-l4);*/
+  background-color: rgba(0,0,0,0);
+  color: var(--primarycolour-d4);
+  border: 2px solid var(--primarycolour-d4);
 }

@@ -6,7 +6,7 @@ function Nav() {
       <div className="nav-dropdown">
       <button className="nav-button">
         <span className="nav-link">
-        <Link to="./about">
+        <Link to="/about">
           <i className="fa fa-angle-double-right nav-icon"></i> 
           About
         </Link>
@@ -14,7 +14,7 @@ function Nav() {
       </button>
       <button className="nav-button">
         <span className="nav-link">
-        <Link to="./blog">
+        <Link to="/blog">
           <i className="fa fa-angle-double-right nav-icon"></i> 
           Blog
         </Link>
@@ -22,7 +22,7 @@ function Nav() {
       </button>
       <button className="nav-button">
         <span className="nav-link">
-        <Link to="./projects">
+        <Link to="/projects">
           <i className="fa fa-angle-double-right nav-icon"></i> 
           Projects
         </Link>
@@ -30,7 +30,7 @@ function Nav() {
       </button>
       <button className="nav-button">
         <span className="nav-link">
-        <Link to="./photos">
+        <Link to="/photos">
           <i className="fa fa-angle-double-right nav-icon"></i> 
           Photos
         </Link>
@@ -38,7 +38,7 @@ function Nav() {
       </button>
       <button className="nav-button">
         <span className="nav-link">
-        <Link to="./contact">
+        <Link to="/contact">
           <i className="fa fa-angle-double-right nav-icon"></i> 
           Contact
         </Link>

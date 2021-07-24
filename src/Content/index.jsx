@@ -1,30 +1,32 @@
 import './index.css';
 import { useLocation, Route, Switch } from 'react-router-dom';
-import { Home, About, Contact, Blog, BlogAll, Projects, TagPage, Page404, Photos} from '../Pages';
-import React, {useEffect} from 'react';
+import { Home, About, Contact, Blog, BlogAll, Projects, ProjectsAll, TagPage, Page404, Photos, PhotosAll } from '../Pages';
+import React, { useEffect } from 'react';
 
-function Content(){
+function Content() {
   const location = useLocation();
-  useEffect(() => {           
-    window.scrollTo(0, 0);     
-    }, [location]);
-    return (
-        <div className="content-wrapper">
-          <div className="content">
-          <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/about" exact component={About} />
-            <Route path="/blog" exact component={BlogAll} />
-            <Route path={"blog/:topicId"} component={Blog} />
-            <Route path="/contact" exact component={Contact} />
-            <Route path="/projects" exact component={Projects} />
-            <Route path="/tagpage" exact component={TagPage} />
-            <Route path="/photos" exact component={Photos} />
-            <Route component={Page404} />
-          </Switch>
-          </div>
-        </div>
-    );
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+  return (
+    <div className="app-content-wrapper">
+      <div className="content">
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/about" exact component={About} />
+          <Route path="/contact" exact component={Contact} />
+          <Route path="/blog" exact component={BlogAll} />
+          <Route path="/blog/:slug" component={Blog} />
+          <Route path="/projects" exact component={ProjectsAll} />
+          <Route path="/projects/:slug" component={Projects} />
+          <Route path="/photos" exact component={PhotosAll} />
+          <Route path="/photos/:slug" component={Photos} />
+          <Route path="/tag/:tag" exact component={TagPage} />
+          <Route component={Page404} />
+        </Switch>
+      </div>
+    </div>
+  );
 }
 
 export default Content;

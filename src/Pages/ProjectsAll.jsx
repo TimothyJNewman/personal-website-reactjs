@@ -5,14 +5,15 @@ import Query from "../Components/Query/QueryContent"
 import gql from "graphql-tag";
 import { useState, useEffect } from 'react';
 
-const BlogAll = () => {
+const ProjectAll = () => {
 
+  const APIURL = process.env.REACT_APP_BACKEND_URL;
   const [currentArticleStart, setCurrentArticleStart] = useState(0);
   const [articleCount, setArticleCount] = useState();
   const [countError, setError] = useState(null);
-  const BLOGPOST_QUERY = gql`
+  const PROJECTPOST_QUERY = gql`
     query {
-      blogposts(limit: 4, start: ${currentArticleStart}, sort: "published_at:desc") {
+      projectposts(limit: 4, start: ${currentArticleStart}, sort: "published_at:desc") {
         id
         title
         published_at
@@ -26,7 +27,6 @@ const BlogAll = () => {
   `;
 
   useEffect(() => {
-    const APIURL = process.env.REACT_APP_BACKEND_URL;
     // Parses the JSON returned by a network request
     const parseJSON = resp => (resp.json ? resp.json() : resp);
 
@@ -44,7 +44,7 @@ const BlogAll = () => {
       'Content-Type': 'application/json',
     };
     try {
-      fetch(APIURL + '/blogposts/count', {
+      fetch(APIURL + '/projectposts/count', {
         method: 'GET',
         headers: headers,
       })
@@ -101,20 +101,21 @@ const BlogAll = () => {
   return (
     <>
       <div className="medium-col">
-        <CoverImage title="Recent Blog Posts" />
+        <CoverImage title="Recent Projects" />
         <br />
-        <Query query={BLOGPOST_QUERY}>
-          {({ data: { blogposts }, error }) => {
+        <Query query={PROJECTPOST_QUERY}>
+          {({ data: { projectposts }, error }) => {
             if (error) {
               return <div className="error-message">An error occured: {error.message}</div>;
             }
             return (
               <div className="card-container">
                 {
-                  blogposts.map(posts => (
-                    <Link to={formatLink("/blog/", posts.slug)} key={posts.id}>
+                  projectposts.map(posts => (
+                    <Link to={formatLink("/projects/", posts.slug)} key={posts.id}>
                       <Card
                         title={posts.title}
+                        img={posts.coverimage ? APIURL + posts.coverimage.formats.medium.url : ""}
                         date={formatDate(posts.published_at)}
                         description={posts.summary}
                         tag1={posts.tags[0] ? posts.tags[0].Tag : false}
@@ -138,4 +139,4 @@ const BlogAll = () => {
   );
 }
 
-export default BlogAll;
+export default ProjectAll;

@@ -1,17 +1,21 @@
 import { BrowserRouter as Router } from 'react-router-dom';
+import { ApolloProvider } from "@apollo/react-hooks";
+import client from "./Util/apolloClient";
 import Header from './Header/index';
 import Content from './Content/index';
 import Footer from './Footer/index';
 
 const App = () => (
     <Router>
-    <div className="App">
+        <ApolloProvider client={client}>
+        <div className="App">
             <Header />
             <Content />
             <Footer />
-    </div>
+        </div>
+        </ApolloProvider>
     </Router>
-    
+
 );
 
 export default App;

@@ -79,7 +79,7 @@
 .title {
   display: inline;
   font-size: calc(15px + 3vmin);
-  color: var(--primarycolour-l5);
+  color: var(--primarycolour-l6);
   margin: 20px 0px 20px 0px;
   /*margin-right: calc(10px + 5vw);*/
   text-align: center;
@@ -111,7 +111,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(5px + 3vmin);
-  color: var(--primarycolour-l5);
+  color: var(--primarycolour-l6);
   margin: 0.1em;
   padding: 0;
   position: relative;

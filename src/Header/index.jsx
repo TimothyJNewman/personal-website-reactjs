@@ -31,27 +31,27 @@ function Header() {
         <div className="nav-header">
             <ButtonHeader 
               textValue = "Home"
-              linkValue = "./"
+              linkValue = "/"
             />
             <ButtonHeader 
               textValue = "About"
-              linkValue = "./about"
+              linkValue = "/about"
             />
             <ButtonHeader 
               textValue = "Blog"
-              linkValue = "./blog"
+              linkValue = "/blog"
             />
             <ButtonHeader 
               textValue = "Projects"
-              linkValue = "./projects"
+              linkValue = "/projects"
             />
             <ButtonHeader 
               textValue = "Photos"
-              linkValue = "./photos"
+              linkValue = "/photos"
             />
             <ButtonHeader 
               textValue = "Contact"
-              linkValue = "./contact"
+              linkValue = "/contact"
             />
         </div>
           </div>

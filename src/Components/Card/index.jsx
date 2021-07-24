@@ -15,9 +15,9 @@ class Card extends Component {
                   <p className="card-body"> {this.props.description}</p>
                 </div>
                 <div className="card-tag-container">
-                  {this.props.tag1 ? <Link to={"/tagpage?tag="+this.props.tag1}><div className="card-tag">{this.props.tag1}</div></Link> : ""}
-                  {this.props.tag2 ? <Link to={"/tagpage?tag="+this.props.tag2}><div className="card-tag">{this.props.tag2}</div></Link> : ""}
-                  {this.props.tag3 ? <Link to={"/tagpage?tag="+this.props.tag3}><div className="card-tag">{this.props.tag3}</div></Link> : ""}
+                  {this.props.tag1 ? <Link to={"/tag/"+this.props.tag1}><div className="card-tag">{this.props.tag1}</div></Link> : ""}
+                  {this.props.tag2 ? <Link to={"/tag/"+this.props.tag2}><div className="card-tag">{this.props.tag2}</div></Link> : ""}
+                  {this.props.tag3 ? <Link to={"/tag/"+this.props.tag3}><div className="card-tag">{this.props.tag3}</div></Link> : ""}
                 </div>
               </div>
             </div>

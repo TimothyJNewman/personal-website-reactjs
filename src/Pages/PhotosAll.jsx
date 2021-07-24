@@ -5,28 +5,30 @@ import Query from "../Components/Query/QueryContent"
 import gql from "graphql-tag";
 import { useState, useEffect } from 'react';
 
-const BlogAll = () => {
+const PhotosAll = () => {
 
+  const APIURL = process.env.REACT_APP_BACKEND_URL;
   const [currentArticleStart, setCurrentArticleStart] = useState(0);
   const [articleCount, setArticleCount] = useState();
   const [countError, setError] = useState(null);
-  const BLOGPOST_QUERY = gql`
+  const PHOTOS_QUERY = gql`
     query {
-      blogposts(limit: 4, start: ${currentArticleStart}, sort: "published_at:desc") {
+      galleries(limit: 4, start: ${currentArticleStart}, sort: "published_at:desc") {
         id
+        coverimage {
+          formats
+        }
         title
-        published_at
         slug
-        summary
-        tags {
-          Tag
+        published_at
+        images {
+          formats
         }
       }
     }
-  `;
+    `;
 
   useEffect(() => {
-    const APIURL = process.env.REACT_APP_BACKEND_URL;
     // Parses the JSON returned by a network request
     const parseJSON = resp => (resp.json ? resp.json() : resp);
 
@@ -100,26 +102,24 @@ const BlogAll = () => {
   }
   return (
     <>
-      <div className="medium-col">
-        <CoverImage title="Recent Blog Posts" />
+      <div className="large-col">
+        <CoverImage title="Photo Gallery" />
         <br />
-        <Query query={BLOGPOST_QUERY}>
-          {({ data: { blogposts }, error }) => {
+        <Query query={PHOTOS_QUERY}>
+          {({ data: { galleries }, error }) => {
             if (error) {
               return <div className="error-message">An error occured: {error.message}</div>;
             }
             return (
-              <div className="card-container">
+              <div className="card-container-gallery">
                 {
-                  blogposts.map(posts => (
-                    <Link to={formatLink("/blog/", posts.slug)} key={posts.id}>
+                  galleries.map(posts => (
+                    <Link to={formatLink("/photos/", posts.slug)} key={posts.id}>
                       <Card
+                        img={posts.coverimage ? APIURL + posts.coverimage.formats.medium.url : ""}
                         title={posts.title}
                         date={formatDate(posts.published_at)}
-                        description={posts.summary}
-                        tag1={posts.tags[0] ? posts.tags[0].Tag : false}
-                        tag2={posts.tags[1] ? posts.tags[1].Tag : false}
-                        tag3={posts.tags[2] ? posts.tags[2].Tag : false}
+                        description={posts.description}
                       />
                     </Link>
                   ))
@@ -138,4 +138,4 @@ const BlogAll = () => {
   );
 }
 
-export default BlogAll;
+export default PhotosAll;
