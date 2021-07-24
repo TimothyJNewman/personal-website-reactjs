@@ -212,7 +212,7 @@ code {
   font-weight: bold;
 }
 
-/* Fade in keyframes */
+/* Effect keyframes */
 
 @keyframes fadeIn {
    from    { opacity: 0; }

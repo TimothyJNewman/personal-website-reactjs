@@ -27,6 +27,7 @@ const ProjectAll = () => {
   `;
 
   useEffect(() => {
+    const APIURL = process.env.REACT_APP_BACKEND_URL;
     // Parses the JSON returned by a network request
     const parseJSON = resp => (resp.json ? resp.json() : resp);
 
