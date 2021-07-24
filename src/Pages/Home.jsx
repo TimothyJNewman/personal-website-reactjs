@@ -42,6 +42,9 @@ const Home = () => {
         image
         order
       }
+      tags {
+        Tag
+      }
     }
   `;
 
@@ -56,7 +59,7 @@ const Home = () => {
 
   return (
     <Query query={HOME_QUERY}>
-      {({ data: { projectposts, blogposts, welcomenote, socialmedias }, error }) => {
+      {({ data: { projectposts, blogposts, welcomenote, socialmedias, tags }, error }) => {
         if (error) {
           return <div className="error-message">An error occured: {error.message}</div>;
         }
@@ -98,7 +101,7 @@ const Home = () => {
                 ))}
               </div>
               <p className="card-readmore">
-                <Link to="./projects">Explore all projects <i className="fa fa-arrow-right"></i></Link>
+                <Link to="/projects">Explore all projects <i className="fa fa-arrow-right"></i></Link>
               </p>
             </div>
             <div className="medium-col">
@@ -118,9 +121,20 @@ const Home = () => {
                 ))}
               </div>
               <p className="card-readmore">
-                <Link to="./blog">Read all blog posts <i className="fa fa-arrow-right"></i></Link>
+                <Link to="/blog">Read all blog posts <i className="fa fa-arrow-right"></i></Link>
               </p>
             </div>
+            <div className="medium-col">
+                <h2 className="blog-postlist-title">All Tags</h2>
+                <div className="card-tag-container-tagpage">
+                  {tags
+                    ? tags.map(elem => (
+                      <Link to={"/tag/" + elem.Tag} key={elem.Tag} className="card-tag-link"><div className="card-tag">{elem.Tag} </div></Link>
+                    ))
+                    : <p className="error-message">No tags found</p>
+                  }
+                </div>
+              </div>
           </div>
         )
       }}

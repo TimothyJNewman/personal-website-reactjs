@@ -78,7 +78,7 @@ const TagPage = () => {
                   : <p className="error-message">No projects found</p>
                 }
                 <p className="card-readmore">
-                  <Link to="./Projects">Explore all projects <i className="fa fa-arrow-right"></i></Link>
+                  <Link to="/Projects">Explore all projects <i className="fa fa-arrow-right"></i></Link>
                 </p>
               </div>
               <div className="medium-col">

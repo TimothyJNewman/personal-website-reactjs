@@ -341,7 +341,7 @@ input[type=text].red-underline:focus, textarea.red-underline:focus {
 .form-inputs input[type=button] {
   max-width: 150px;
   border-radius: 5px;
-  border: 0;
+  border: 2px solid var(--primarycolour-d4);
   margin-left: 15px;
   padding: 6px 15px 6px 15px;
   color: var(--primarycolour-l5);
@@ -351,8 +351,8 @@ input[type=text].red-underline:focus, textarea.red-underline:focus {
 }
 
 .form-inputs input[type=button]:hover {
-  background-color: var(--primarycolour-l4);
-  color: var(--primarycolour-d3);
+  color: var(--primarycolour-d4);
+  background-color: rgba(0,0,0,0);
 }
 
 .card {
