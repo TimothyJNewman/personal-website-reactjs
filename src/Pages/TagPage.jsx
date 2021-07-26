@@ -7,7 +7,6 @@ import gql from "graphql-tag";
 const TagPage = () => {
 
   let { tag } = useParams();
-  const APIURL = process.env.REACT_APP_BACKEND_URL;
   const BLOGPOST_PROJECTPOST_TAG_QUERY = gql`
     query BlogProjectTag($queryTag: String!) {
       projectposts(sort: "published_at:desc", where: { tags: { Tag: $queryTag } }) {
@@ -64,7 +63,7 @@ const TagPage = () => {
                     {data.projectposts.map(posts => (
                       <Link to={formatLink("/projects/", posts.slug)} key={posts.id}>
                         <Card
-                          img={posts.CoverImage ? APIURL + posts.CoverImage.formats.medium.url : ""}
+                          img={posts.CoverImage ? posts.CoverImage.formats.medium.url : ""}
                           title={posts.title}
                           date={formatDate(posts.published_at)}
                           description={posts.summary}

@@ -2,7 +2,7 @@ import React from "react";
 import { isEmail, sanitizeKeepUnicode } from "../Util/StringValidator";
 import CoverImage from '../CoverImage/index';
 
-const apiUrl = process.env.REACT_APP_BACKEND_URL;
+const APIURL = process.env.REACT_APP_BACKEND_URL;
 
 // Parses the JSON returned by a network request
 const parseJSON = resp => (resp.json ? resp.json() : resp);
@@ -67,7 +67,7 @@ class Contact extends React.Component {
   // Fetch your restaurants immediately after the component is mounted
   componentDidMount = async () => {
     try {
-      const socialMedias = await fetch(apiUrl+'/socialmedias?_sort=order:ASC', {
+      const socialMedias = await fetch(APIURL+'/socialmedias?_sort=order:ASC', {
         method: 'GET',
         headers: headers,
       })
@@ -106,7 +106,7 @@ class Contact extends React.Component {
       console.log("Validated"+isValidationCompleted);
       if(isValidationCompleted){
         try {
-          await fetch(apiUrl+'/contactforms', {
+          await fetch(APIURL+'/contactforms', {
             method: 'POST',
             headers: headers,
             body: JSON.stringify(this.state.modifiedData),

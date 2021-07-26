@@ -7,7 +7,6 @@ import gql from "graphql-tag";
 
 const Blog = () => {
   let { slug } = useParams();
-  const APIURL = process.env.REACT_APP_BACKEND_URL;
   const BLOGPOST_CONTENT_QUERY = gql`
     query BlogPost($slug: String!){
       blogposts( where: {slug: $slug }) {
@@ -43,7 +42,7 @@ const Blog = () => {
           return (
             <div>
               {blogposts[0].coverimage
-                ? <CoverImage src={APIURL + blogposts[0].coverimage.formats.medium.url} title={blogposts[0].title} />
+                ? <CoverImage src={blogposts[0].coverimage.formats.medium.url} title={blogposts[0].title} />
                 : <CoverImage title={blogposts[0].title} />}
               <div className="contentWrapper">
                 <div className="article-date-and-tags">

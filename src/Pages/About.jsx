@@ -5,7 +5,6 @@ import CoverImage from '../CoverImage/index';
 
 const About = () => {
 
-  const APIURL = process.env.REACT_APP_BACKEND_URL;
   const BLOGPOST_PROJECTPOST_TAG_QUERY = gql`
     query {
       aboutpagecontent {
@@ -31,7 +30,7 @@ const About = () => {
                 {aboutpagecontent
                 ? <>
                     {aboutpagecontent.coverimage
-                      ? <CoverImage src={APIURL + aboutpagecontent.coverimage.formats.medium.url} title={aboutpagecontent.title} />
+                      ? <CoverImage src={aboutpagecontent.coverimage.formats.medium.url} title={aboutpagecontent.title} />
                       : <CoverImage title={aboutpagecontent.title} />}
                     <div className="contentWrapper">
                       <div className="markdown-text">
