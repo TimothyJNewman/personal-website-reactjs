@@ -111,8 +111,8 @@ const ProjectAll = () => {
             }
             return (
               <div className="card-container">
-                {
-                  projectposts.map(posts => (
+                {projectposts
+                ? projectposts.map(posts => (
                     <Link to={formatLink("/projects/", posts.slug)} key={posts.id}>
                       <Card
                         title={posts.title}
@@ -125,6 +125,7 @@ const ProjectAll = () => {
                       />
                     </Link>
                   ))
+                : <p className="error-message">No projects found</p>
                 }
               </div>
             );

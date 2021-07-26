@@ -69,14 +69,20 @@ const Home = () => {
               <div className="blog-intro">
                 <div className="intro-container">
                   <div className="welcome-text-and-socials">
-                    <MarkdownView className="markdown-text"
-                      markdown={welcomenote.welcometext}
-                      options={{ tables: true, emoji: true, noHeaderId: true }}
-                    />
+                    {welcomenote
+                    ? <MarkdownView className="markdown-text"
+                        markdown={welcomenote.welcometext}
+                        options={{ tables: true, emoji: true, noHeaderId: true }}
+                      />
+                    : ""
+                    }
                     <div className="social-media-icon-container">
-                      {socialmedias.map(media => (
-                        <a href={media.link} key={media.id}><img src={media.image} alt={media.name} /></a>
-                      ))}
+                      {socialmedias
+                        ? socialmedias.map(media => (
+                          <a href={media.link} key={media.id}><img src={media.image} alt={media.name} /></a>
+                        ))
+                        : ""
+                      }
                     </div>
                   </div>
                 </div>
@@ -86,19 +92,22 @@ const Home = () => {
               <br />
               <h2 className="blog-postlist-title">Recent Projects</h2>
               <div className="card-container">
-                {projectposts.map(posts => (
-                  <Link to={formatLink("/projects/", posts.slug)} key={posts.id}>
-                    <Card
-                      img={posts.coverimage ? APIURL + posts.coverimage.formats.medium.url : ""}
-                      title={posts.title}
-                      date={formatDate(posts.published_at)}
-                      description={posts.summary}
-                      tag1={posts.tags[0] ? posts.tags[0].Tag : false}
-                      tag2={posts.tags[1] ? posts.tags[1].Tag : false}
-                      tag3={posts.tags[2] ? posts.tags[2].Tag : false}
-                    />
-                  </Link>
-                ))}
+                {projectposts
+                  ? projectposts.map(posts => (
+                    <Link to={formatLink("/projects/", posts.slug)} key={posts.id}>
+                      <Card
+                        img={posts.coverimage ? APIURL + posts.coverimage.formats.medium.url : ""}
+                        title={posts.title}
+                        date={formatDate(posts.published_at)}
+                        description={posts.summary}
+                        tag1={posts.tags[0] ? posts.tags[0].Tag : false}
+                        tag2={posts.tags[1] ? posts.tags[1].Tag : false}
+                        tag3={posts.tags[2] ? posts.tags[2].Tag : false}
+                      />
+                    </Link>
+                  ))
+                  : <p className="error-message">No projects found</p>
+                }
               </div>
               <p className="card-readmore">
                 <Link to="/projects">Explore all projects <i className="fa fa-arrow-right"></i></Link>
@@ -107,34 +116,37 @@ const Home = () => {
             <div className="medium-col">
               <h2 className="blog-postlist-title">Recent Blog Posts</h2>
               <div className="card-container">
-                {blogposts.map(posts => (
-                  <Link to={formatLink("/blog/", posts.slug)} key={posts.id}>
-                    <Card
-                      title={posts.title}
-                      date={formatDate(posts.published_at)}
-                      description={posts.summary}
-                      tag1={posts.tags[0] ? posts.tags[0].Tag : false}
-                      tag2={posts.tags[1] ? posts.tags[1].Tag : false}
-                      tag3={posts.tags[2] ? posts.tags[2].Tag : false}
-                    />
-                  </Link>
-                ))}
+                {blogposts
+                  ? blogposts.map(posts => (
+                    <Link to={formatLink("/blog/", posts.slug)} key={posts.id}>
+                      <Card
+                        title={posts.title}
+                        date={formatDate(posts.published_at)}
+                        description={posts.summary}
+                        tag1={posts.tags[0] ? posts.tags[0].Tag : false}
+                        tag2={posts.tags[1] ? posts.tags[1].Tag : false}
+                        tag3={posts.tags[2] ? posts.tags[2].Tag : false}
+                      />
+                    </Link>
+                  ))
+                  : <p className="error-message">No blog posts found</p>
+                }
               </div>
               <p className="card-readmore">
                 <Link to="/blog">Read all blog posts <i className="fa fa-arrow-right"></i></Link>
               </p>
             </div>
             <div className="medium-col">
-                <h2 className="blog-postlist-title">All Tags</h2>
-                <div className="card-tag-container-tagpage">
-                  {tags
-                    ? tags.map(elem => (
-                      <Link to={"/tag/" + elem.Tag} key={elem.Tag} className="card-tag-link"><div className="card-tag">{elem.Tag} </div></Link>
-                    ))
-                    : <p className="error-message">No tags found</p>
-                  }
-                </div>
+              <h2 className="blog-postlist-title">All Tags</h2>
+              <div className="card-tag-container-tagpage">
+                {tags
+                  ? tags.map(elem => (
+                    <Link to={"/tag/" + elem.Tag} key={elem.Tag} className="card-tag-link"><div className="card-tag">{elem.Tag} </div></Link>
+                  ))
+                  : <p className="error-message">No tags found</p>
+                }
               </div>
+            </div>
           </div>
         )
       }}

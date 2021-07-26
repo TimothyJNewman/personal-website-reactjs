@@ -110,8 +110,8 @@ const BlogAll = () => {
             }
             return (
               <div className="card-container">
-                {
-                  blogposts.map(posts => (
+                {blogposts
+                ? blogposts.map(posts => (
                     <Link to={formatLink("/blog/", posts.slug)} key={posts.id}>
                       <Card
                         title={posts.title}
@@ -123,6 +123,7 @@ const BlogAll = () => {
                       />
                     </Link>
                   ))
+                : <p className="error-message">No blog posts found</p>
                 }
               </div>
             );

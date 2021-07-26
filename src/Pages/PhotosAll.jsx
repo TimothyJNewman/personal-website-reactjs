@@ -113,8 +113,8 @@ const PhotosAll = () => {
             }
             return (
               <div className="card-container-gallery">
-                {
-                  galleries.map(posts => (
+                {galleries
+                ? galleries.map(posts => (
                     <Link to={formatLink("/photos/", posts.slug)} key={posts.id}>
                       <Card
                         img={posts.coverimage ? APIURL + posts.coverimage.formats.medium.url : ""}
@@ -124,6 +124,7 @@ const PhotosAll = () => {
                       />
                     </Link>
                   ))
+                : <p className="error-message">No galleries found</p>
                 }
               </div>
             );
