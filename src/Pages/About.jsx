@@ -28,17 +28,22 @@ const About = () => {
           return (
             <>
               <div>
-                {aboutpagecontent.coverimage
-                  ? <CoverImage src={APIURL + aboutpagecontent.coverimage.formats.medium.url} title={aboutpagecontent.title} />
-                  : <CoverImage title={aboutpagecontent.title} />}
-                <div className="contentWrapper">
-                  <div className="markdown-text">
-                    <MarkdownView
-                      markdown={aboutpagecontent.content}
-                      options={{ emoji: true, noHeaderId: true, strikethrough: true }}
-                    />
-                  </div>
-                </div>
+                {aboutpagecontent
+                ? <>
+                    {aboutpagecontent.coverimage
+                      ? <CoverImage src={APIURL + aboutpagecontent.coverimage.formats.medium.url} title={aboutpagecontent.title} />
+                      : <CoverImage title={aboutpagecontent.title} />}
+                    <div className="contentWrapper">
+                      <div className="markdown-text">
+                        <MarkdownView
+                          markdown={aboutpagecontent.content}
+                          options={{ emoji: true, noHeaderId: true, strikethrough: true }}
+                        />
+                      </div>
+                    </div>
+                  </>
+                : <p className="error-message">No about page</p>
+                }
               </div>
             </>
           );

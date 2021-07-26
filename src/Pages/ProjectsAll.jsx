@@ -7,7 +7,6 @@ import { useState, useEffect } from 'react';
 
 const ProjectAll = () => {
 
-  const APIURL = process.env.REACT_APP_BACKEND_URL;
   const [currentArticleStart, setCurrentArticleStart] = useState(0);
   const [articleCount, setArticleCount] = useState();
   const [countError, setError] = useState(null);
@@ -116,7 +115,7 @@ const ProjectAll = () => {
                     <Link to={formatLink("/projects/", posts.slug)} key={posts.id}>
                       <Card
                         title={posts.title}
-                        img={posts.coverimage ? APIURL + posts.coverimage.formats.medium.url : ""}
+                        img={posts.coverimage ? posts.coverimage.formats.medium.url : ""}
                         date={formatDate(posts.published_at)}
                         description={posts.summary}
                         tag1={posts.tags[0] ? posts.tags[0].Tag : false}

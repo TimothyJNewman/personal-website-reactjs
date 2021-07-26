@@ -7,7 +7,6 @@ import gql from "graphql-tag";
 
 const Home = () => {
 
-  const APIURL = process.env.REACT_APP_BACKEND_URL;
   const HOME_QUERY = gql`
     query HomeQuery {
       projectposts(limit: 4, sort: "published_at:desc") {
@@ -96,7 +95,7 @@ const Home = () => {
                   ? projectposts.map(posts => (
                     <Link to={formatLink("/projects/", posts.slug)} key={posts.id}>
                       <Card
-                        img={posts.coverimage ? APIURL + posts.coverimage.formats.medium.url : ""}
+                        img={posts.coverimage ? posts.coverimage.formats.medium.url : ""}
                         title={posts.title}
                         date={formatDate(posts.published_at)}
                         description={posts.summary}

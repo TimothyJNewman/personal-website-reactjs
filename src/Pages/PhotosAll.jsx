@@ -7,7 +7,6 @@ import { useState, useEffect } from 'react';
 
 const PhotosAll = () => {
 
-  const APIURL = process.env.REACT_APP_BACKEND_URL;
   const [currentArticleStart, setCurrentArticleStart] = useState(0);
   const [articleCount, setArticleCount] = useState();
   const [countError, setError] = useState(null);
@@ -117,7 +116,7 @@ const PhotosAll = () => {
                 ? galleries.map(posts => (
                     <Link to={formatLink("/photos/", posts.slug)} key={posts.id}>
                       <Card
-                        img={posts.coverimage ? APIURL + posts.coverimage.formats.medium.url : ""}
+                        img={posts.coverimage ? posts.coverimage.formats.medium.url : ""}
                         title={posts.title}
                         date={formatDate(posts.published_at)}
                         description={posts.description}
