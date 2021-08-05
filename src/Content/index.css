@@ -29,7 +29,7 @@
   padding: min(1em, 3vmin);
 }
 
-.contentWrapper{
+.content-wrapper{
   max-width: 700px;
   text-align:left;
   margin-left: auto;
@@ -145,7 +145,7 @@
   margin-left: auto;
   height: 100%;
   align-self: center;
-  font-size: calc(0.5em + 1.5vmin);
+  font-size: 1em;
   align-content: center;
   opacity: 0.92;
 }
@@ -341,7 +341,7 @@ input[type=text].red-underline:focus, textarea.red-underline:focus {
 .form-inputs input[type=button] {
   max-width: 150px;
   border-radius: 5px;
-  border: 2px solid var(--primarycolour-d4);
+  border: 0;
   margin-left: 15px;
   padding: 6px 15px 6px 15px;
   color: var(--primarycolour-l5);
@@ -352,25 +352,7 @@ input[type=text].red-underline:focus, textarea.red-underline:focus {
 
 .form-inputs input[type=button]:hover {
   color: var(--primarycolour-d4);
-  background-color: rgba(0,0,0,0);
-}
-
-.card {
-  width: 100%;
-  height: 100%;
-  border-radius: 5px;
-  background-color: var(--primarycolour-l3);
-  box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
-  text-align: left;  
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-
-.card-body {
-  margin: 5px 0px 5px 0px;
-  text-overflow: ellipsis;
-  font-size: calc(0.6rem + 1.1vmin);
+  background-color: var(--primarycolour-l4);
 }
 
 /*

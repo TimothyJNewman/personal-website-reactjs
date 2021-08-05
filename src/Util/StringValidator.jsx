@@ -1,18 +1,18 @@
 // Adapted from string-sanitizer package
 
 //Just alphabets and numbers
-function sanitize (str) {
+const sanitize = (str) => {
   return str.replace(/[^a-zA-Z0-9]/g, '');
 };
 
 //Removes special characters except .,?!
-function sanitizeKeepUnicode (str) {
+const sanitizeKeepUnicode = (str) => {
   // eslint-disable-next-line
   return str.replace(/[`~@#$%^&*()_|+\-=;:'"<>\{\}\[\]\\\/]/gi, '');
 };
 
 //Username & Email
-function isEmail (str) {
+const isEmail = (str) => {
   // eslint-disable-next-line
   const regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   if (regex.test(str)) {

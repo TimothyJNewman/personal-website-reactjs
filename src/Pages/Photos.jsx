@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import CoverImage from '../CoverImage/index';
 import Query from "../Components/Query/QueryContent";
 import gql from "graphql-tag";
+import { getFormattedDate } from "../Util/CommonUtils";
 
 const Photos = () => {
   let { slug } = useParams();
@@ -22,15 +23,10 @@ const Photos = () => {
     }
   `;
 
-  const formatDate = (dateString) => {
-    var options = { year: 'numeric', month: 'long', day: 'numeric' };
-    return new Date(dateString).toLocaleDateString([], options);
-  }
-
   return (
     <>
       <Query query={PHOTOS_CONTENT_QUERY} slug={slug}>
-        {({ data: { galleries }, error }) => {
+        {({ data, error }) => {
           if (error) {
             if (error.message === "Cannot read property 'content' of undefined") {
               return <div className="error-message">An error occured: Invalid URL</div>;
@@ -39,12 +35,12 @@ const Photos = () => {
           }
           return (
             <div>
-              {galleries[0].coverimage
-                ? <CoverImage src={galleries[0].coverimage.formats.medium.url} title={galleries[0].title} />
-                : <CoverImage title={galleries[0].title} />}
-              <div className="contentWrapper">
+              {data.galleries[0].coverimage
+                ? <CoverImage src={data.galleries[0].coverimage.formats.medium.url} title={data.galleries[0].title} />
+                : <CoverImage title={data.galleries[0].title} />}
+              <div className="content-wrapper">
                 <div className="article-date-and-tags">
-                  <p className="article-date">{formatDate(galleries[0].published_at)}</p>
+                  <p className="article-date">{getFormattedDate(data.galleries[0].published_at)}</p>
                 </div>
               </div>
               <p className="card-readmore">

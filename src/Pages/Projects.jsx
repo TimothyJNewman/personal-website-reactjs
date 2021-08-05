@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import CoverImage from '../CoverImage/index';
 import Query from "../Components/Query/QueryContent";
 import gql from "graphql-tag";
+import { getFormattedDate } from "../Util/CommonUtils";
 
 const Projects = () => {
   let { slug } = useParams();
@@ -24,15 +25,10 @@ const Projects = () => {
     }
   `;
 
-  const formatDate = (dateString) => {
-    var options = { year: 'numeric', month: 'long', day: 'numeric' };
-    return new Date(dateString).toLocaleDateString([], options);
-  }
-
   return (
     <>
       <Query query={PROJECTPOST_CONTENT_QUERY} slug={slug}>
-        {({ data: { projectposts }, error }) => {
+        {({ data, error }) => {
           if (error) {
             if (error.message === "Cannot read property 'content' of undefined") {
               return <div className="error-message">An error occured: Invalid URL</div>;
@@ -41,21 +37,21 @@ const Projects = () => {
           }
           return (
             <div>
-              {projectposts[0].coverimage
-                ? <CoverImage src={projectposts[0].coverimage.formats.medium.url} title={projectposts[0].title} />
-                : <CoverImage title={projectposts[0].title} />}
-              <div className="contentWrapper">
+              {data.projectposts[0].coverimage
+                ? <CoverImage src={data.projectposts[0].coverimage.formats.medium.url} title={data.projectposts[0].title} />
+                : <CoverImage title={data.projectposts[0].title} />}
+              <div className="content-wrapper">
                 <div className="article-date-and-tags">
-                  <p className="article-date">{formatDate(projectposts[0].published_at)}</p>
+                  <p className="article-date">{getFormattedDate(data.projectposts[0].published_at)}</p>
                   <div className="card-tag-container-tagpage">
-                    {projectposts[0].tags.map(elem => (
+                    {data.projectposts[0].tags.map(elem => (
                       <Link className="card-tag-link" to={"/tag/" + elem.Tag} key={elem.Tag}><div className="card-tag" >{elem.Tag}</div></Link>
                     ))}
                   </div>
                 </div>
                 <div className="markdown-text">
                   <MarkdownView
-                    markdown={projectposts[0].content}
+                    markdown={data.projectposts[0].content}
                     options={{ emoji: true, noHeaderId: true, strikethrough: true }}
                   />
                 </div>

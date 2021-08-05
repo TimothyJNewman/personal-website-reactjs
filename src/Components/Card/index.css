@@ -63,17 +63,15 @@
 
 .card-tag{
   border-radius: 5px;
-  padding: 1px 8px 4px 8px;
+  padding: 3px 10px 6px 10px;
   margin: 1px;
   color: var(--primarycolour-l6);
   background-color: var(--primarycolour-d1);
   font-size: calc(0.6rem + 1.1vmin);
   display: inline;
-  border: 2px solid var(--primarycolour-d4);
 }
 
 .card-tag:hover{
-  /*background-color: var(--primarycolour-l4);*/
-  background-color: rgba(0,0,0,0);
+  background-color: var(--primarycolour-l4);
   color: var(--primarycolour-d4);
 }

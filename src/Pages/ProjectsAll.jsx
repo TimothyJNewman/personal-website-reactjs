@@ -4,6 +4,7 @@ import Card from '../Components/Card/index';
 import Query from "../Components/Query/QueryContent"
 import gql from "graphql-tag";
 import { useState, useEffect } from 'react';
+import { getFormattedDate, getFormattedLink, getNavPageNumbers, getNewCurrentArticleStart } from '../Util/CommonUtils';
 
 const ProjectAll = () => {
 
@@ -58,41 +59,8 @@ const ProjectAll = () => {
     }
   }, [countError]);
 
-  const handlePageNavClick = (navType) => {
-    if (navType === -1) {
-      if (currentArticleStart >= 4) {
-        setCurrentArticleStart(currentArticleStart - 4);
-      } else {
-        setCurrentArticleStart(0);
-      }
-    } else if (navType === -2) {
-      if (currentArticleStart + 4 < articleCount) {
-        setCurrentArticleStart(currentArticleStart + 4);
-      }
-    } else {
-      setCurrentArticleStart(4 * (navType - 1));
-    }
-  }
-
-  const formatDate = (dateString) => {
-    var options = { year: 'numeric', month: 'long', day: 'numeric' };
-    return new Date(dateString).toLocaleDateString([], options);
-  }
-
-  const formatLink = (beginLink, endLink) => {
-    return beginLink + endLink;
-  }
-
-  const navPageNumbers = () => {
-    const items = [];
-    for (var i = 1; i <= Math.ceil(articleCount / 4); i++) {
-      items.push(
-        <button className="posts-navigation-button" onClick={handlePageNavClick.bind(this, i)} key={i}>
-          {i}
-        </button>
-      )
-    }
-    return items;
+  const handlePageNavClick = (navCode) => {
+    setCurrentArticleStart(getNewCurrentArticleStart(navCode, currentArticleStart, articleCount));
   }
 
   if (countError) {
@@ -104,19 +72,19 @@ const ProjectAll = () => {
         <CoverImage title="Recent Projects" />
         <br />
         <Query query={PROJECTPOST_QUERY}>
-          {({ data: { projectposts }, error }) => {
+          {({ data, error }) => {
             if (error) {
               return <div className="error-message">An error occured: {error.message}</div>;
             }
             return (
               <div className="card-container">
-                {projectposts
-                ? projectposts.map(posts => (
-                    <Link to={formatLink("/projects/", posts.slug)} key={posts.id}>
+                {data.projectposts
+                ? data.projectposts.map(posts => (
+                    <Link to={getFormattedLink("/projects/", posts.slug)} key={posts.id}>
                       <Card
                         title={posts.title}
                         img={posts.coverimage ? posts.coverimage.formats.medium.url : ""}
-                        date={formatDate(posts.published_at)}
+                        date={getFormattedDate(posts.published_at)}
                         description={posts.summary}
                         tag1={posts.tags[0] ? posts.tags[0].Tag : false}
                         tag2={posts.tags[1] ? posts.tags[1].Tag : false}
@@ -132,7 +100,7 @@ const ProjectAll = () => {
         </Query>
         <div className="posts-navigation-container">
           <button className="posts-navigation-button" onClick={handlePageNavClick.bind(this, -1)}><i className="fa fa-arrow-circle-left"></i> Prev</button>
-          {navPageNumbers()}
+          {getNavPageNumbers(articleCount, handlePageNavClick)}
           <button className="posts-navigation-button" onClick={handlePageNavClick.bind(this, -2)}>Next <i className="fa fa-arrow-circle-right"></i></button>
         </div>
       </div>

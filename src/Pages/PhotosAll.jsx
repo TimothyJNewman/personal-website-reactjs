@@ -4,6 +4,7 @@ import Card from '../Components/Card/index';
 import Query from "../Components/Query/QueryContent"
 import gql from "graphql-tag";
 import { useState, useEffect } from 'react';
+import { getFormattedDate, getFormattedLink, getNavPageNumbers, getNewCurrentArticleStart } from "../Util/CommonUtils";
 
 const PhotosAll = () => {
 
@@ -26,7 +27,8 @@ const PhotosAll = () => {
       }
     }
     `;
-
+  
+  // Effect hook to fetch gallery count and set state
   useEffect(() => {
     const APIURL = process.env.REACT_APP_BACKEND_URL;
     // Parses the JSON returned by a network request
@@ -60,70 +62,38 @@ const PhotosAll = () => {
     }
   }, [countError]);
 
-  const handlePageNavClick = (navType) => {
-    if (navType === -1) {
-      if (currentArticleStart >= 4) {
-        setCurrentArticleStart(currentArticleStart - 4);
-      } else {
-        setCurrentArticleStart(0);
-      }
-    } else if (navType === -2) {
-      if (currentArticleStart + 4 < articleCount) {
-        setCurrentArticleStart(currentArticleStart + 4);
-      }
-    } else {
-      setCurrentArticleStart(4 * (navType - 1));
-    }
+  const handlePageNavClick = (navCode) => {
+    setCurrentArticleStart(getNewCurrentArticleStart(navCode, currentArticleStart, articleCount));
   }
 
-  const formatDate = (dateString) => {
-    var options = { year: 'numeric', month: 'long', day: 'numeric' };
-    return new Date(dateString).toLocaleDateString([], options);
-  }
-
-  const formatLink = (beginLink, endLink) => {
-    return beginLink + endLink;
-  }
-
-  const navPageNumbers = () => {
-    const items = [];
-    for (var i = 1; i <= Math.ceil(articleCount / 4); i++) {
-      items.push(
-        <button className="posts-navigation-button" onClick={handlePageNavClick.bind(this, i)} key={i}>
-          {i}
-        </button>
-      )
-    }
-    return items;
-  }
-
+  // Error message if gallery count cannot be obtained from API
   if (countError) {
     return <div className="error-message">An error occured: {countError.message}</div>;
   }
   return (
     <>
-      <div className="large-col">
+      <div className="medium-col">
         <CoverImage title="Photo Gallery" />
         <br />
         <Query query={PHOTOS_QUERY}>
-          {({ data: { galleries }, error }) => {
+          {({ data, error }) => {
             if (error) {
               return <div className="error-message">An error occured: {error.message}</div>;
             }
             return (
               <div className="card-container-gallery">
-                {galleries
-                ? galleries.map(posts => (
-                    <Link to={formatLink("/photos/", posts.slug)} key={posts.id}>
+                {data.galleries
+                  ? data.galleries.map(posts => (
+                    <Link to={getFormattedLink("/photos/", posts.slug)} key={posts.id}>
                       <Card
                         img={posts.coverimage ? posts.coverimage.formats.medium.url : ""}
                         title={posts.title}
-                        date={formatDate(posts.published_at)}
+                        date={getFormattedDate(posts.published_at)}
                         description={posts.description}
                       />
                     </Link>
                   ))
-                : <p className="error-message">No galleries found</p>
+                  : <p className="error-message">No galleries found</p>
                 }
               </div>
             );
@@ -131,7 +101,7 @@ const PhotosAll = () => {
         </Query>
         <div className="posts-navigation-container">
           <button className="posts-navigation-button" onClick={handlePageNavClick.bind(this, -1)}><i className="fa fa-arrow-circle-left"></i> Prev</button>
-          {navPageNumbers()}
+          {getNavPageNumbers(articleCount, handlePageNavClick)}
           <button className="posts-navigation-button" onClick={handlePageNavClick.bind(this, -2)}>Next <i className="fa fa-arrow-circle-right"></i></button>
         </div>
       </div>

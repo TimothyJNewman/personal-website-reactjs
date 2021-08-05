@@ -20,22 +20,22 @@ const About = () => {
   return (
     <>
       <Query query={BLOGPOST_PROJECTPOST_TAG_QUERY} >
-        {({ data: { aboutpagecontent }, error }) => {
+        {({ data, error }) => {
           if (error) {
             return <div className="error-message">An error occured: {error.message}</div>;
           }
           return (
             <>
               <div>
-                {aboutpagecontent
+                {data.aboutpagecontent
                 ? <>
-                    {aboutpagecontent.coverimage
-                      ? <CoverImage src={aboutpagecontent.coverimage.formats.medium.url} title={aboutpagecontent.title} />
-                      : <CoverImage title={aboutpagecontent.title} />}
-                    <div className="contentWrapper">
+                    {data.aboutpagecontent.coverimage
+                      ? <CoverImage src={data.aboutpagecontent.coverimage.formats.medium.url} title={data.aboutpagecontent.title} />
+                      : <CoverImage title={data.aboutpagecontent.title} />}
+                    <div className="content-wrapper">
                       <div className="markdown-text">
                         <MarkdownView
-                          markdown={aboutpagecontent.content}
+                          markdown={data.aboutpagecontent.content}
                           options={{ emoji: true, noHeaderId: true, strikethrough: true }}
                         />
                       </div>

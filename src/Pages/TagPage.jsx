@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import Card from '../Components/Card/index';
 import Query from "../Components/Query/QueryContent"
 import gql from "graphql-tag";
+import { getFormattedDate, getFormattedLink } from '../Util/CommonUtils';
 
 const TagPage = () => {
 
@@ -35,15 +36,6 @@ const TagPage = () => {
     }  
   `;
 
-  const formatDate = (dateString) => {
-    var options = { year: 'numeric', month: 'long', day: 'numeric' };
-    return new Date(dateString).toLocaleDateString([], options);
-  }
-
-  const formatLink = (beginLink, endLink) => {
-    return beginLink + endLink;
-  }
-
   return (
     <>
       <Query query={BLOGPOST_PROJECTPOST_TAG_QUERY} tag={tag}>
@@ -61,11 +53,11 @@ const TagPage = () => {
                 {data.projectposts
                   ? <div className="card-container">
                     {data.projectposts.map(posts => (
-                      <Link to={formatLink("/projects/", posts.slug)} key={posts.id}>
+                      <Link to={getFormattedLink("/projects/", posts.slug)} key={posts.id}>
                         <Card
                           img={posts.CoverImage ? posts.CoverImage.formats.medium.url : ""}
                           title={posts.title}
-                          date={formatDate(posts.published_at)}
+                          date={getFormattedDate(posts.published_at)}
                           description={posts.summary}
                           tag1={posts.tags[0] ? posts.tags[0].Tag : false}
                           tag2={posts.tags[1] ? posts.tags[1].Tag : false}
@@ -85,10 +77,10 @@ const TagPage = () => {
                 {data.blogposts
                   ? <div className="card-container">
                     {data.blogposts.map(posts => (
-                      <Link to={formatLink("/blog/", posts.slug)} key={posts.id}>
+                      <Link to={getFormattedLink("/blog/", posts.slug)} key={posts.id}>
                         <Card
                           title={posts.title}
-                          date={formatDate(posts.published_at)}
+                          date={getFormattedDate(posts.published_at)}
                           description={posts.summary}
                           tag1={posts.tags[0] ? posts.tags[0].Tag : false}
                           tag2={posts.tags[1] ? posts.tags[1].Tag : false}
