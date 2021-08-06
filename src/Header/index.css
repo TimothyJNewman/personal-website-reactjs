@@ -11,7 +11,7 @@
   div .subtitle {
     display: block;
   }
-  .button-nav {
+  .dropdown-burger {
     display: inline;
   }
   .subtitle {
@@ -28,7 +28,7 @@
 }
 
 @media only screen and (min-width:801px) {
-  .button-nav {
+  .dropdown-burger {
     display: none;
   }
   .header-logo-container {
@@ -45,7 +45,7 @@
   .title-surname {
     display: none;
   }
-  .button-nav {
+  .dropdown-burger {
     bottom: 3px !important;
   }
 }
@@ -99,7 +99,7 @@
   display: flex;
 }
 
-.button-nav {
+.dropdown-burger {
   width: 25px;
   height: 25px;
   background-color: var(--primarycolour-d2);
@@ -119,7 +119,7 @@
   box-shadow: 0 0 0 0.12em var(--primarycolour-l5);
 }
 
-.button-nav:hover, .button-nav:focus {
+.dropdown-burger:hover, .dropdown-burger:focus {
   background-color: var(--primarycolour-l3);
 }
 

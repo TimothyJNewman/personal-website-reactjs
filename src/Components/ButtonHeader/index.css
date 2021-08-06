@@ -1,11 +1,9 @@
 .button-header-wrapper {
-  background: 
-    linear-gradient(var(--secondarycolour-l1), var(--secondarycolour-l1)),
-    linear-gradient(var(--secondarycolour-l1), var(--secondarycolour-l1));
+  background: linear-gradient(var(--secondarycolour-l1), var(--secondarycolour-l1)), linear-gradient(var(--secondarycolour-l1), var(--secondarycolour-l1));
   background-size: 100% 0em, 0 0.2em;
   background-position: 100% 100%, 0% 100%;
   background-repeat: no-repeat;
-  transition : background-size 400ms;
+  transition: background-size 400ms;
   display: flex;
   border-width: 0px;
   padding: 0;
@@ -15,7 +13,7 @@
 .button-header {
   color: var(--primarycolour-l6);
   margin: 0.1em;
-  padding: 0.9em 0.2em 0.1em 0.2em;
+  padding: 1.2em 0.2em 0.35em 0.2em;
 }
 
 .button-header-wrapper:hover, .button-header-wrapper:focus {
@@ -24,7 +22,7 @@
 }
 
 @media only screen and (max-width: 800px) {
-    .button-header-wrapper{
-        display: none;
-    }
+  .button-header-wrapper {
+    display: none;
+  }
 }

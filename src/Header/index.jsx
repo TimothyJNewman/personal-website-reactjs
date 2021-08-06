@@ -12,7 +12,7 @@ function Header() {
       <header className="header">
         <div className="header-wrapper large-col">
           <button
-            className="button-nav"
+            className="dropdown-burger"
             aria-label="Toggle Menu"
             onClick={() => {
               toggleMenuExpansion(!menuExpanded);
