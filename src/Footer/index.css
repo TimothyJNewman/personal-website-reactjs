@@ -7,10 +7,10 @@
   justify-content: center;
   font-size: calc(0.75rem + 0.9vmin);
   color: var(--primarycolour-l5);
+  padding: 0.2em;
 }
 
 .footer-copyright{
   margin: 0;
   margin-bottom: 0.2em;
-  margin-top: 1em;
 }

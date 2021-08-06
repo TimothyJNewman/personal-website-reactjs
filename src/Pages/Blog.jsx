@@ -36,7 +36,7 @@ const Blog = () => {
             return <div className="error-message">An error occured: {error.message}</div>;
           }
           return (
-            <div>
+            <div className="medium-col">
               {data.blogposts[0].coverimage
                 ? <CoverImage src={data.blogposts[0].coverimage.formats.medium.url} title={data.blogposts[0].title} />
                 : <CoverImage title={data.blogposts[0].title} />}

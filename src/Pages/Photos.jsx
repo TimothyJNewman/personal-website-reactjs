@@ -34,7 +34,7 @@ const Photos = () => {
             return <div className="error-message">An error occured: {error.message}</div>;
           }
           return (
-            <div>
+            <div className="medium-col">
               {data.galleries[0].coverimage
                 ? <CoverImage src={data.galleries[0].coverimage.formats.medium.url} title={data.galleries[0].title} />
                 : <CoverImage title={data.galleries[0].title} />}

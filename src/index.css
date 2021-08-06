@@ -1,4 +1,4 @@
-:root{
+:root {
   --primarycolour-l6: #fffcfa;
   --primarycolour-l5: #fbf3ed;
   --primarycolour-l4: #f3d8c4;
@@ -12,61 +12,55 @@
   --primarycolour-d4: #4c2a10;
   --primarycolour-d5: #3f230d;
   --primarycolour-d6: #1a0c01;
-  
   --secondarycolour-l0: rgba(5, 153, 126, 1);
   --secondarycolour-l1: rgba(8, 207, 171, 1);
   --secondarycolourbackground: rgba(5, 153, 126, 0.7);
   --secondarycolouroverlay: rgba(5, 153, 126, 0.1);
-
   --errorcolor: rgba(240, 26, 35, 1);
   --errorcolorbackground: rgba(240, 26, 35, 0.7);
-
   --dategrey: #404040;
 }
 
-body, div, button{
+body, div, button {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1{
+h1 {
   font-weight: 600;
-  font-size: calc(15px + 3vmin);
+  font-size: 2em;
 }
 
-h2{
+h2 {
   font-weight: 500;
-  font-size: 1.3em;
+  font-size: 1.5em;
 }
 
-h3{
+h3 {
   font-weight: 500;
-  font-size: 1em;
+  font-size: 1.2em;
 }
 
-p{
+p {
   font-weight: 400;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
- a, a:hover, a:focus, a:active {
-      text-decoration: none;
-      color: inherit;
- }
+a, a:hover, a:focus, a:active {
+  text-decoration: none;
+  color: inherit;
+}
 
 .bg-color-secondary {
-    background-color: blueviolet;
+  background-color: blueviolet;
 }
 
-.error-message{
+.error-message {
   color: var(--primarycolour-l5);
   background-color: var(--errorcolorbackground);
   border: 2px solid var(--errorcolor);
@@ -74,7 +68,7 @@ code {
   padding: 2px 8px;
 }
 
-.success-message{
+.success-message {
   color: var(--primarycolour-l5);
   background-color: var(--secondarycolourbackground);
   border: 2px solid var(--secondarycolour-l0);
@@ -82,72 +76,74 @@ code {
   padding: 2px 8px;
 }
 
+
 /* 
 *
 *markdown formatting
 *
 */
 
-.markdown-text h2,h3,h4,h5{
+.markdown-text {
+  line-height: 1.6;
+}
+
+.markdown-text h2, h3, h4, h5 {
   margin-top: 0.6em;
   margin-bottom: 0.4em;
 }
 
-.markdown-text p{
+.markdown-text p {
   margin-top: 0.5em;
   margin-bottom: 0.5em;
 }
 
-.markdown-text img{
+.markdown-text img {
   width: 100%;
-  height:auto;
+  height: auto;
   border-radius: 5px;
 }
 
-.markdown-text video{
+.markdown-text video {
   width: 100%;
-  height:auto;
+  height: auto;
   border-radius: 5px;
 }
 
-.markdown-text strong,em,u{
+.markdown-text strong, em, u {
   color: var(--primarycolour-d3);
 }
 
-.markdown-text strong{
+.markdown-text strong {
   font-weight: 500;
 }
 
 .markdown-text a {
   color: var(--primarycolour-d2);
-  background: 
-    linear-gradient(var(--secondarycolour-l0), var(--secondarycolour-l0)),
-    linear-gradient(var(--secondarycolour-l0), var(--secondarycolour-l0));
+  background: linear-gradient(var(--secondarycolour-l0), var(--secondarycolour-l0)), linear-gradient(var(--secondarycolour-l0), var(--secondarycolour-l0));
   background-size: 100% 0.15em, 0 1em;
   background-position: 0% 100%, 0% 100%;
   background-repeat: no-repeat;
   transition: background-size 400ms, color 400ms;
 }
 
-.markdown-text a:hover,
-.markdown-text a:focus {
+.markdown-text a:hover, .markdown-text a:focus {
   background-size: 0 0.1em, 100% 1.2em;
   color: var(--primarycolour-l5);
 }
 
 @media only screen and (max-width: 768px) {
-  .markdown-text > div > blockquote {
-    margin-right:0;
+  .markdown-text>div>blockquote {
+    margin-right: 0;
   }
 }
 
 @media only screen and (min-width:768px) {
-  .markdown-text > div > blockquote {
-    margin-right:30px;
-  }  
+  .markdown-text>div>blockquote {
+    margin-right: 30px;
+  }
 }
 
-.markdown-text > div > blockquote {
+.markdown-text>div>blockquote {
   margin-left: 0;
   padding-right: 0.5em;
   padding-left: 2em;
@@ -158,66 +154,73 @@ code {
   border-radius: 5px;
 }
 
-.markdown-text blockquote p{
+.markdown-text blockquote p {
   font-style: italic;
   font-weight: 500;
   color: var(--primarycolour-d5);
 }
 
-.markdown-text ol{
-  counter-reset: li; /* Initiate a counter */
-  list-style: none; /* Remove default numbering */
-  *list-style: decimal; /* Keep using default numbering for IE6/7 */
-  padding-left:calc(0.1em + 0.5vw);
-  font-size: 0.95em;
+.markdown-text ol {
+  counter-reset: li;
+  /* Initiate a counter */
+  list-style: none;
+  /* Remove default numbering */
+  *list-style: decimal;
+  /* Keep using default numbering for IE6/7 */
+  padding-left: calc(0.1em + 0.5vw);
 }
 
-.markdown-text ol > li{
+.markdown-text ol>li {
   margin-bottom: 0.5em;
   display: flex;
   align-items: flex-start;
 }
 
-.markdown-text ol > li:before{
+.markdown-text ol>li:before {
   content: counter(li);
   counter-increment: li;
   background-color: var(--secondarycolour-l0);
-  position:relative;
+  position: relative;
   right: 0.5em;
-  padding: 0.1em 0.5em 0.1em 0.5em;
+  padding: 0em 0.5em 0em 0.5em;
   border-radius: 50%;
   color: var(--primarycolour-l5);
   font-weight: bold;
   font-size: 1em;
 }
 
-.markdown-text ul{
+.markdown-text ul {
   padding-left: 0;
-  font-size: 0.9em;
 }
 
-.markdown-text ul > li{
+.markdown-text ul>li {
   margin-bottom: 0.5em;
   display: flex;
   align-items: flex-start;
 }
 
-.markdown-text ul > li:before{
+.markdown-text ul>li:before {
   font-family: "Font Awesome 5 Free";
   font-size: 1em;
   content: "\f101";
-  position:relative;
+  position: relative;
   padding: 0.1em 0.55em 0.1em 0.55em;
   color: var(--secondarycolour-l0);
   font-weight: bold;
 }
 
+
 /* Effect keyframes */
 
 @keyframes fadeIn {
-   from    { opacity: 0; }
-   to      { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
+
 
 /* Loader */
 
@@ -226,7 +229,7 @@ code {
   text-align: center;
 }
 
-.spinner > div {
+.spinner>div {
   width: 0.7em;
   height: 0.7em;
   background-color: var(--primarycolour-d4);
@@ -247,15 +250,20 @@ code {
 }
 
 @-webkit-keyframes sk-bouncedelay {
-  0%, 80%, 100% { -webkit-transform: scale(0) }
-  40% { -webkit-transform: scale(1.0) }
+  0%, 80%, 100% {
+    -webkit-transform: scale(0)
+  }
+  40% {
+    -webkit-transform: scale(1.0)
+  }
 }
 
 @keyframes sk-bouncedelay {
-  0%, 80%, 100% { 
+  0%, 80%, 100% {
     -webkit-transform: scale(0);
     transform: scale(0);
-  } 40% { 
+  }
+  40% {
     -webkit-transform: scale(1.0);
     transform: scale(1.0);
   }

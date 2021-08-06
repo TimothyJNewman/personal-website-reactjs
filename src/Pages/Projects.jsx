@@ -36,7 +36,7 @@ const Projects = () => {
             return <div className="error-message">An error occured: {error.message}</div>;
           }
           return (
-            <div>
+            <div className="medium-col">
               {data.projectposts[0].coverimage
                 ? <CoverImage src={data.projectposts[0].coverimage.formats.medium.url} title={data.projectposts[0].title} />
                 : <CoverImage title={data.projectposts[0].title} />}

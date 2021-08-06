@@ -26,7 +26,7 @@ const About = () => {
           }
           return (
             <>
-              <div>
+              <div className="medium-col">
                 {data.aboutpagecontent
                 ? <>
                     {data.aboutpagecontent.coverimage

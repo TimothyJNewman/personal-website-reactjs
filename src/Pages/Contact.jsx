@@ -141,16 +141,11 @@ class Contact extends React.Component {
         <div>
           <CoverImage title="Contact Me!" />
           <br />
-          <div className="content-wrapper">
+          <div className="content-wrapper medium-col">
             <div className="contact-container">
               <div className="contact-left">
                 <div className="markdown-text">
                   <h2>I would love to hear from you</h2>Please fill up the contact form or click on the social media icons. Aenean porta fringilla faucibus. Duis faucibus ex quis lorem ultricies, vitae sagittis est lacinia. <h3>Duis dolor velit, venenatis nec iaculis ac, viverra et orci. </h3>Etiam tristique dapibus nisi et malesuada. In quis tincidunt metus, aliquet maximus magna. Phasellus condimentum metus id leo porta pretium. Suspendisse eu rhoncus lectus, sit amet sagittis massa. <h3>Obrigado todos</h3>Sed nec lacus sit amet dui facilisis pulvinar at et orci. Cras vitae quam ac sapien molestie feugiat non nec leo.<br /><br />
-                  <div className="spinner">
-                                <div className="bounce1"></div>
-                                <div className="bounce2"></div>
-                                <div className="bounce3"></div>
-                              </div> 
                 </div>
                 {this.state.error
                   ? <div className="error-message">An error occured: {this.state.error.message} social medias links</div>
@@ -204,7 +199,7 @@ class Contact extends React.Component {
                                 <div className="bounce1"></div>
                                 <div className="bounce2"></div>
                                 <div className="bounce3"></div>
-                              </div> 
+                              </div>
                               : ""}
                         <input
                           type="button"

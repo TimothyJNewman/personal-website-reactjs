@@ -52,13 +52,12 @@
   }
 }
 
-.header {
+.header-dropdownmenu-container {
   background-color: var(--primarycolour-d2);
-  /*background-image: linear-gradient(20deg, #653815,#b96627,#da8b4e,#e6b189,#b96627,#653815);*/
+}
+
+.header {
   padding: calc(0.1rem + 2vmin);
-  /*background-position: center;
-  background-image: url(../Images/texture-1027812_640.jpg);
-  background-repeat:repeat;*/
 }
 
 .header-logo-container{
@@ -81,7 +80,6 @@
   font-size: calc(15px + 3vmin);
   color: var(--primarycolour-l6);
   margin: 20px 0px 20px 0px;
-  /*margin-right: calc(10px + 5vw);*/
   text-align: center;
 }
 
@@ -94,7 +92,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(5px + 2vmin);
+  font-size: calc(0.5em + 1vmin);
   color: var(--primarycolour-l3);
   margin: 1px 5px 10px 5px;
 }
