@@ -8,22 +8,29 @@
   background-color: var(--primarycolour-d2);
   padding: 0;
   color: var(--primarycolour-l5);
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(5em, 1fr));
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+@media only screen and (min-width: 425px) {
+  .nav-dropdown {
+    justify-content: center;
+  }
 }
 
 .nav-button {
   padding: 0.5em 0.2em 0.5em 0.2em;
   background-color: inherit;
   color: var(--primarycolour-l6);
-  font-size: 1em;
+  font-size: 0.95em;
   border: 0;
   text-align: left;
 }
 
 .nav-link {
   padding: 0;
-  font-size: 0.9em;
 }
 
 .nav-link:hover {

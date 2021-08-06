@@ -1,7 +1,6 @@
 .footer {
   background-color: var(--primarycolour-d2);
   min-height: 10vh;
-  font-size: 0.9em;
   color: var(--primarycolour-l5);
   padding: 0.2em;
 }
@@ -10,6 +9,7 @@
   margin: 0 auto 0 auto;
   padding: 0em 5vw;
   padding-bottom: 0.4em;
+  font-size: 0.95em;
 }
 
 .footer-copyright {
