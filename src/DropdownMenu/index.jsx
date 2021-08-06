@@ -12,7 +12,6 @@ function Nav() {
           </Link>
         </span>
       </button>
-
       <button className="nav-button">
         <span className="nav-link">
           <Link to="/blog">

@@ -65,7 +65,7 @@
   }
 }
 
-@media only screen and (min-width:800px) {
+@media only screen and (min-width:801px) {
   .cover-image-title-container {
     min-width: 40%;
     max-width: 65%;

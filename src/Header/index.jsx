@@ -10,7 +10,7 @@ function Header() {
   return (
     <div className="header-dropdownmenu-container">
       <header className="header">
-        <div className="header-wrapper">
+        <div className="header-wrapper large-col">
           <button
             className="button-nav"
             aria-label="Toggle Menu"
@@ -56,7 +56,7 @@ function Header() {
           </div>
         </div>
       </header>
-      <SmoothCollapse expanded={menuExpanded} className="nav-dropdown-container">
+      <SmoothCollapse expanded={menuExpanded} className="nav-dropdown-container medium-col">
           <Nav />
       </SmoothCollapse>
     </div>

@@ -2,7 +2,6 @@
   text-align: center;
 }
 
-
 @media only screen and (max-width: 800px) {
   .title {
     margin-bottom: 0px !important;
@@ -10,32 +9,32 @@
     margin-top: 0px !important;
   }
   div .subtitle {
-    display:block;
-  }    
-  .button-nav{
+    display: block;
+  }
+  .button-nav {
     display: inline;
   }
-  .subtitle{
+  .subtitle {
     margin-bottom: 0px !important;
   }
-  .header-logo-container{
+  .header-logo-container {
     display: none;
   }
-  .title-and-subtitle{
+  .title-and-subtitle {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 }
 
-@media only screen and (min-width:800px) {
-  .button-nav{
+@media only screen and (min-width:801px) {
+  .button-nav {
     display: none;
   }
-  .header-logo-container{
+  .header-logo-container {
     display: inline;
   }
-  .title-and-subtitle{
+  .title-and-subtitle {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -43,11 +42,10 @@
 }
 
 @media only screen and (max-width: 350px) {
-  .title-surname{
-    display:none;
+  .title-surname {
+    display: none;
   }
-  
-  .button-nav{
+  .button-nav {
     bottom: 3px !important;
   }
 }
@@ -60,12 +58,12 @@
   padding: calc(0.1rem + 2vmin);
 }
 
-.header-logo-container{
+.header-logo-container {
   height: 100%;
   margin: 0.5em;
 }
 
-.header-logo{
+.header-logo {
   display: inline;
   width: 3em;
   height: 3em;
@@ -83,7 +81,7 @@
   text-align: center;
 }
 
-.title-surname{
+.title-surname {
   color: var(--secondarycolour-l1);
 }
 
@@ -98,12 +96,12 @@
 }
 
 .nav-header {
-    display:flex;
+  display: flex;
 }
 
-.button-nav{
-  width:25px;
-  height:25px;
+.button-nav {
+  width: 25px;
+  height: 25px;
   background-color: var(--primarycolour-d2);
   flex-direction: column;
   align-items: center;
@@ -113,7 +111,7 @@
   margin: 0.1em;
   padding: 0;
   position: relative;
-  right:10px;
+  right: 10px;
   bottom: 1vh;
   font-size: 17px;
   border: 0;
@@ -121,15 +119,14 @@
   box-shadow: 0 0 0 0.12em var(--primarycolour-l5);
 }
 
-.button-nav:hover, .button-nav:focus{
+.button-nav:hover, .button-nav:focus {
   background-color: var(--primarycolour-l3);
 }
 
-.header-wrapper{
-  display:flex;
+.header-wrapper {
+  display: flex;
   justify-content: space-evenly;
   align-items: center;
-  max-width: 800px;
   margin-right: auto;
   margin-left: auto;
 }
