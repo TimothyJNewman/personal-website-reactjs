@@ -7,26 +7,12 @@
   color: var(--primarycolour-d6);
 }
 
-
-/*
-*
-* Responsive Layouts
-*
-*/
-
-.medium-col {
-  max-width: 740px;
-}
-
-.large-col {
-  max-width: 900px;
-}
-
 .content {
-  min-height: 100vmin;
+  min-height: 100vh;
   margin-right: auto;
   margin-left: auto;
   padding: min(1em, 3vmin);
+  width: min(740px, calc(100% - 2*min(1em, 3vmin)));
 }
 
 .content-wrapper {
@@ -44,6 +30,21 @@
   grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
   /*grid-template-rows: 1fr 1fr ;*/
   grid-gap: min(1em, 3vmin) min(1em, 3vmin);
+}
+
+
+/*
+*
+* Responsive Layouts
+*
+*/
+
+.medium-col {
+  max-width: 740px;
+}
+
+.large-col {
+  max-width: 900px;
 }
 
 

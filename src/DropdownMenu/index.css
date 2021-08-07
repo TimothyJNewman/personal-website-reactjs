@@ -21,7 +21,6 @@
 }
 
 .nav-button {
-  padding: 0.5em 0.2em 0.5em 0.2em;
   background-color: inherit;
   color: var(--primarycolour-l6);
   font-size: 0.95em;

@@ -1,8 +1,7 @@
 .footer {
   background-color: var(--primarycolour-d2);
-  min-height: 10vh;
   color: var(--primarycolour-l5);
-  padding: 0.2em;
+  padding: 0.5em;
 }
 
 .footer-nav {
@@ -14,5 +13,4 @@
 
 .footer-copyright {
   margin: 0;
-  margin-bottom: 0.2em;
 }
