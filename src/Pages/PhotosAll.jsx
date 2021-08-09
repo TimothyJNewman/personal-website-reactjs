@@ -81,7 +81,7 @@ const PhotosAll = () => {
               return <div className="error-message">An error occured: {error.message}</div>;
             }
             return (
-              <div className="card-container-gallery">
+              <div className="card-container-gallery content-text">
                 {data.galleries
                   ? data.galleries.map(posts => (
                     <Link to={getFormattedLink("/photos/", posts.slug)} key={posts.id}>

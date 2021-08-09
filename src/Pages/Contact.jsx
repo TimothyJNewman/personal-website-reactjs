@@ -141,7 +141,7 @@ class Contact extends React.Component {
         <div>
           <CoverImage title="Contact Me!" />
           <br />
-          <div className="content-wrapper medium-col">
+          <div className="content-wrapper medium-col content-text">
             <div className="contact-container">
               <div className="contact-left">
                 <div className="markdown-text">

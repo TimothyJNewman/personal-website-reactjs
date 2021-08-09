@@ -51,21 +51,21 @@
 }
 
 .card-tag-container {
-  max-height: 30px;
   display: flex;
 }
 
-.card-tag {
+.card-tag-link {
   border-radius: 5px;
   padding: 3px 10px 6px 10px;
-  margin: 1px;
   color: var(--primarycolour-l6);
   background-color: var(--primarycolour-d1);
-  font-size: 0.9em;
+  font-size: 1em;
   display: inline;
+  margin: 0.1em 0.1em;
+  line-height: initial;
 }
 
-.card-tag:hover {
+.card-tag-link:hover, .card-tag-link:focus {
   background-color: var(--primarycolour-l4);
   color: var(--primarycolour-d4);
 }

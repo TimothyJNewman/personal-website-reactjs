@@ -51,7 +51,7 @@ const TagPage = () => {
               <div className="medium-col">
                 <h2 className="blog-postlist-title">Recent Projects</h2>
                 {data.projectposts
-                  ? <div className="card-container">
+                  ? <div className="card-container content-text">
                     {data.projectposts.map(posts => (
                       <Link to={getFormattedLink("/projects/", posts.slug)} key={posts.id}>
                         <Card
@@ -72,7 +72,7 @@ const TagPage = () => {
                   <Link to="/Projects">Explore all projects <i className="fa fa-arrow-right"></i></Link>
                 </p>
               </div>
-              <div className="medium-col">
+              <div className="medium-col content-text">
                 <h2 className="blog-postlist-title">Recent Blog Posts</h2>
                 {data.blogposts
                   ? <div className="card-container">
@@ -95,12 +95,12 @@ const TagPage = () => {
                   <Link to="/blog">Read all blog posts <i className="fa fa-arrow-right"></i></Link>
                 </p>
               </div>
-              <div className="medium-col">
+              <div className="medium-col content-text">
                 <h2 className="blog-postlist-title">All Tags</h2>
                 <div className="card-tag-container-tagpage">
                   {data.tags
                     ? data.tags.map(elem => (
-                      <Link to={"/tag/" + elem.Tag} key={elem.Tag} className="card-tag-link"><div className="card-tag">{elem.Tag} </div></Link>
+                      <Link to={"/tag/" + elem.Tag} key={elem.Tag} className="card-tag-link">{elem.Tag}</Link>
                     ))
                     : <p className="error-message">No tags found</p>
                   }

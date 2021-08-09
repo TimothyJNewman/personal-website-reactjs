@@ -1,6 +1,6 @@
 {
   "name": "Timothy Jabez Newman Website",
-  "short_name": "Timothy Newman Website",
+  "short_name": "Tim Newman",
   "icons": [{
       "src": "/icons/android-chrome-192x192.png",
       "sizes": "192x192",
@@ -12,7 +12,8 @@
       "type": "image/png"
     }
   ],
-  "start_url": ".",
+  "start_url": "/",
+  "scope": "/",
   "theme_color": "#fbf3ed",
   "background_color": "#fbf3ed",
   "display": "standalone"

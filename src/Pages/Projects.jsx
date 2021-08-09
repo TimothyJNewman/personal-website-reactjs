@@ -40,12 +40,12 @@ const Projects = () => {
               {data.projectposts[0].coverimage
                 ? <CoverImage src={data.projectposts[0].coverimage.formats.medium.url} title={data.projectposts[0].title} />
                 : <CoverImage title={data.projectposts[0].title} />}
-              <div className="content-wrapper">
+              <div className="content-wrapper content-text">
                 <div className="article-date-and-tags">
                   <p className="article-date">{getFormattedDate(data.projectposts[0].published_at)}</p>
                   <div className="card-tag-container-tagpage">
                     {data.projectposts[0].tags.map(elem => (
-                      <Link className="card-tag-link" to={"/tag/" + elem.Tag} key={elem.Tag}><div className="card-tag" >{elem.Tag}</div></Link>
+                      <Link className="card-tag-link" to={"/tag/" + elem.Tag} key={elem.Tag}>{elem.Tag}</Link>
                     ))}
                   </div>
                 </div>

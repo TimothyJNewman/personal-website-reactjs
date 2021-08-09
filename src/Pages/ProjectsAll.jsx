@@ -77,7 +77,7 @@ const ProjectAll = () => {
               return <div className="error-message">An error occured: {error.message}</div>;
             }
             return (
-              <div className="card-container">
+              <div className="card-container content-text">
                 {data.projectposts
                 ? data.projectposts.map(posts => (
                     <Link to={getFormattedLink("/projects/", posts.slug)} key={posts.id}>

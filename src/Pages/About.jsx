@@ -32,7 +32,7 @@ const About = () => {
                     {data.aboutpagecontent.coverimage
                       ? <CoverImage src={data.aboutpagecontent.coverimage.formats.medium.url} title={data.aboutpagecontent.title} />
                       : <CoverImage title={data.aboutpagecontent.title} />}
-                    <div className="content-wrapper">
+                    <div className="content-wrapper content-text">
                       <div className="markdown-text">
                         <MarkdownView
                           markdown={data.aboutpagecontent.content}

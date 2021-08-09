@@ -77,7 +77,7 @@ const BlogAll = () => {
               return <div className="error-message">An error occured: {error.message}</div>;
             }
             return (
-              <div className="card-container">
+              <div className="card-container content-text">
                 {data.blogposts
                 ? data.blogposts.map(posts => (
                     <Link to={getFormattedLink("/blog/", posts.slug)} key={posts.id}>
