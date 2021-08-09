@@ -11,8 +11,8 @@
   min-height: 100vh;
   margin-right: auto;
   margin-left: auto;
-  padding: min(1em, 3vmin);
-  width: min(740px, calc(100% - 2*min(1em, 3vmin)));
+  padding: 1.5em;
+  width: min(740px, calc(100% - 3em));
 }
 
 .content-wrapper {
@@ -156,11 +156,11 @@
 }
 
 .social-media-icon-container a {
-  width: 1.3em;
+  width: 1.4em;
 }
 
 .social-media-icon-container img {
-  height: 1.2em;
+  height: 1.4em;
   margin: 0.2em;
 }
 
@@ -291,7 +291,7 @@ input[type=text].red-underline:focus, textarea.red-underline:focus {
 }
 
 .form-inputs input[type=text] {
-  min-height: 1.7em;
+  min-height: 2em;
   margin-bottom: 0.2em;
   background-color: var(--primarycolour-l5);
 }

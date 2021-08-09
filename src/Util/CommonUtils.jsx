@@ -13,7 +13,7 @@ const getFormattedLink = (hostname, path) => {
 
 // get article start in navigation based nav button click
 const getNewCurrentArticleStart = (navCode, currentArticleStart, articleCount) => {
-    let newCurrentArticleStart;
+    let newCurrentArticleStart = currentArticleStart;
     // navCode for prev page
     if (navCode === -1) {
         if (currentArticleStart >= 4) {
@@ -21,7 +21,7 @@ const getNewCurrentArticleStart = (navCode, currentArticleStart, articleCount) =
         } else {
             newCurrentArticleStart = 0;
         }
-        // navCode for next page
+    // navCode for next page
     } else if (navCode === -2) {
         if (currentArticleStart + 4 < articleCount) {
             newCurrentArticleStart = currentArticleStart + 4;

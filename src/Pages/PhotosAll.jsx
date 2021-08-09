@@ -48,7 +48,7 @@ const PhotosAll = () => {
       'Content-Type': 'application/json',
     };
     try {
-      fetch(APIURL + '/blogposts/count', {
+      fetch(APIURL + '/galleries/count', {
         method: 'GET',
         headers: headers,
       })

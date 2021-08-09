@@ -61,7 +61,7 @@
 
 @media only screen and (max-width: 800px) {
   .cover-image-title-container {
-    width: calc(50px + 70vmin);
+    width: min(740px, calc(100% - 3em));
   }
 }
 
