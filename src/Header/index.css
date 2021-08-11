@@ -17,7 +17,7 @@
   width: 3em;
   height: 3em;
   padding: 0.2em;
-  border-radius: 5px;
+  border-radius: var(--std-border-radius);
   box-shadow: 0 0 0 0.15em var(--primarycolour-l4);
   margin-right: 10px;
 }

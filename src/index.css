@@ -19,6 +19,7 @@
   --errorcolor: rgba(240, 26, 35, 1);
   --errorcolorbackground: rgba(240, 26, 35, 0.7);
   --dategrey: #404040;
+  --std-border-radius: 0.35em;
 }
 
 body, div, button {
@@ -64,7 +65,7 @@ a, a:hover, a:focus, a:active {
   color: var(--primarycolour-l5);
   background-color: var(--errorcolorbackground);
   border: 2px solid var(--errorcolor);
-  border-radius: 5px;
+  border-radius: var(--std-border-radius);
   padding: 2px 8px;
 }
 
@@ -72,7 +73,7 @@ a, a:hover, a:focus, a:active {
   color: var(--primarycolour-l5);
   background-color: var(--secondarycolourbackground);
   border: 2px solid var(--secondarycolour-l0);
-  border-radius: 5px;
+  border-radius: var(--std-border-radius);
   padding: 2px 8px;
 }
 
@@ -100,13 +101,13 @@ a, a:hover, a:focus, a:active {
 .markdown-text img {
   width: 100%;
   height: auto;
-  border-radius: 5px;
+  border-radius: var(--std-border-radius);
 }
 
 .markdown-text video {
   width: 100%;
   height: auto;
-  border-radius: 5px;
+  border-radius: var(--std-border-radius);
 }
 
 .markdown-text strong, em, u {
@@ -151,7 +152,7 @@ a, a:hover, a:focus, a:active {
   padding-bottom: 0.4em;
   border-left: 5px solid var(--primarycolour-l3);
   background-color: var(--secondarycolouroverlay);
-  border-radius: 5px;
+  border-radius: var(--std-border-radius);
 }
 
 .markdown-text blockquote p {

@@ -81,7 +81,7 @@
 }
 
 .card-tag-link {
-  border-radius: 5px;
+  border-radius: var(--std-border-radius);
   padding: 3px 10px 6px 10px;
   color: var(--primarycolour-l6);
   background-color: var(--primarycolour-d1);
@@ -128,13 +128,13 @@
 
 .posts-navigation-button:first-child {
   border-right: 0;
-  border-radius: 5px 0px 0px 5px;
+  border-radius: var(--std-border-radius) 0px 0px var(--std-border-radius);
   border-left: 0;
 }
 
 .posts-navigation-button:last-child {
   border-left: 0.15em solid var(--primarycolour-l5);
-  border-radius: 0px 5px 5px 0px;
+  border-radius: 0px var(--std-border-radius) var(--std-border-radius) 0px;
   border-right: 0;
 }
 
@@ -158,7 +158,7 @@
   background-image: linear-gradient(10deg, var(--primarycolour-l3), var(--primarycolour-l4));
   max-width: 55%;
   padding: 0.5em 1em;
-  border-radius: 5px;
+  border-radius: var(--std-border-radius);
   margin-left: auto;
   height: 100%;
   align-self: center;
@@ -183,7 +183,7 @@
 .blog-intro {
   min-width: 270px;
   min-height: 40vh;
-  border-radius: 5px;
+  border-radius: var(--std-border-radius);
   width: inherit;
   background-position: center;
   background-image: url(../Images/large_profilepicv3_81bd297485.jpg);
@@ -238,10 +238,9 @@
 }
 
 .contact-form-card {
-  /*background-color: var(--primarycolour-l3);*/
   background-image: linear-gradient(10deg, var(--primarycolour-l3), var(--primarycolour-l4));
   padding: 15px;
-  border-radius: 5px;
+  border-radius: var(--std-border-radius);
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   text-align: left;
   overflow: hidden;
@@ -272,11 +271,11 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-bottom: 5px;
+  margin-bottom: var(--std-border-radius);
 }
 
 .form-inputs input[type=text], .form-inputs textarea {
-  border-radius: 5px;
+  border-radius: var(--std-border-radius);
   border: 0;
   color: var(--primarycolour-d4);
   background: linear-gradient(var(--secondarycolour-l0), var(--secondarycolour-l0)), linear-gradient(var(--secondarycolour-l0), var(--secondarycolour-l0));
@@ -361,7 +360,7 @@ input[type=text].red-underline:focus, textarea.red-underline:focus {
 
 .form-inputs input[type=button] {
   max-width: 150px;
-  border-radius: 5px;
+  border-radius: var(--std-border-radius);
   border: 0;
   margin-left: 15px;
   padding: 6px 15px 6px 15px;
