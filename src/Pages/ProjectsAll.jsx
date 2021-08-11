@@ -78,7 +78,7 @@ const ProjectAll = () => {
             }
             return (
               <div className="card-container content-text">
-                {data.projectposts
+                {data.projectposts.length > 0
                 ? data.projectposts.map(posts => (
                     <Link to={getFormattedLink("/projects/", posts.slug)} key={posts.id}>
                       <Card

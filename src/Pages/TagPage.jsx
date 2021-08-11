@@ -48,10 +48,10 @@ const TagPage = () => {
           return (
             <>
               <CoverImage title={"Tag: " + tag} desc={` | Projects: ${data.projectposts ? data.projectposts.length : 0} | Blog: ${data.blogposts ? data.blogposts.length : 0}`} />
-              <div className="medium-col">
+              <div className="medium-col content-text">
                 <h2 className="blog-postlist-title">Recent Projects</h2>
-                {data.projectposts
-                  ? <div className="card-container content-text">
+                {data.projectposts.length > 0
+                  ? <div className="card-container">
                     {data.projectposts.map(posts => (
                       <Link to={getFormattedLink("/projects/", posts.slug)} key={posts.id}>
                         <Card
@@ -74,7 +74,7 @@ const TagPage = () => {
               </div>
               <div className="medium-col content-text">
                 <h2 className="blog-postlist-title">Recent Blog Posts</h2>
-                {data.blogposts
+                {data.blogposts.length > 0
                   ? <div className="card-container">
                     {data.blogposts.map(posts => (
                       <Link to={getFormattedLink("/blog/", posts.slug)} key={posts.id}>

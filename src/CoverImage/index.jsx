@@ -13,7 +13,7 @@ class CoverImage extends Component {
           </div>
           {this.props.src
             ? <img className="cover-image" src={this.props.src} alt='' />
-            : <div className="cover-image" alt='' />}
+            : <img className="cover-image" alt='' />}
         </div>
     )
   }

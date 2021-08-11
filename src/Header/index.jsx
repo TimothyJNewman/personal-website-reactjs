@@ -17,7 +17,7 @@ function Header() {
             onClick={() => {
               toggleMenuExpansion(!menuExpanded);
             }}
-          ><i className={`fa dropdown-burger-symbol ${!menuExpanded ? "fa-bars" : "fa-caret-down"}`}></i>
+          ><i className={`fa dropdown-burger-symbol ${!menuExpanded ? "fa-bars" : "fa-times"}`}></i>
           </button>
           <a href="/" >
             <div className="title-and-subtitle">

@@ -4,7 +4,7 @@ import Nav from '../DropdownMenu/index';
 function Footer() {
   return (
     <footer className="footer">
-      <div className="nav-dropdown-container medium-col">
+      <div className="footer-nav-dropdown-container medium-col">
         <Nav />
       </div>
       <p className="footer-copyright">

@@ -82,7 +82,7 @@ const PhotosAll = () => {
             }
             return (
               <div className="card-container-gallery content-text">
-                {data.galleries
+                {data.galleries.length > 0
                   ? data.galleries.map(posts => (
                     <Link to={getFormattedLink("/photos/", posts.slug)} key={posts.id}>
                       <Card

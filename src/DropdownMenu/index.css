@@ -1,6 +1,7 @@
 .nav-dropdown-container {
   margin: 0 auto 0 auto;
-  padding: 0.5em 0.5em 0em 0.5em;
+  padding: 0.5em;
+  padding-top: 1em;
 }
 
 .nav-dropdown {
@@ -26,7 +27,7 @@
   text-align: left;
   border: 2px solid var(--primarycolour-l4);
   border-radius: 5px;
-  padding: 0.05em 0.4em 0.2em 0.4em;
+  padding: 0.1em 0.4em 0.2em 0.4em;
   margin: 0.1em 0.1em;
 }
 

@@ -78,7 +78,7 @@ const BlogAll = () => {
             }
             return (
               <div className="card-container content-text">
-                {data.blogposts
+                {data.blogposts.length > 0
                 ? data.blogposts.map(posts => (
                     <Link to={getFormattedLink("/blog/", posts.slug)} key={posts.id}>
                       <Card
