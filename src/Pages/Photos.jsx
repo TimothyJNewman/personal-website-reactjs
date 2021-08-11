@@ -1,4 +1,4 @@
-import { useParams } from "react-router";
+import { useParams, Redirect } from "react-router";
 import { Link } from "react-router-dom";
 import CoverImage from '../CoverImage/index';
 import Query from "../Components/Query/QueryContent";
@@ -28,10 +28,9 @@ const Photos = () => {
       <Query query={PHOTOS_CONTENT_QUERY} slug={slug}>
         {({ data, error }) => {
           if (error) {
-            if (error.message === "Cannot read property 'content' of undefined") {
-              return <div className="error-message">An error occured: Invalid URL</div>;
-            }
             return <div className="error-message">An error occured: {error.message}</div>;
+          } else if (data.galleries.length === 0) {
+            return <Redirect to="/page404" />
           }
           return (
             <div className="medium-col">

@@ -22,6 +22,7 @@ function Content() {
           <Route path="/photos" exact component={PhotosAll} />
           <Route path="/photos/:slug" component={Photos} />
           <Route path="/tag/:tag" exact component={TagPage} />
+          <Route path="/page404" exact component={Page404} />
           <Route component={Page404} />
         </Switch>
       </div>
