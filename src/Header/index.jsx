@@ -11,14 +11,6 @@ function Header() {
     <div className="header-dropdownmenu-container">
       <header className="header">
         <div className="header-wrapper large-col">
-          <button
-            className="dropdown-burger"
-            aria-label="Toggle Menu"
-            onClick={() => {
-              toggleMenuExpansion(!menuExpanded);
-            }}
-          ><i className={`fa dropdown-burger-symbol ${!menuExpanded ? "fa-bars" : "fa-times"}`}></i>
-          </button>
           <a href="/" >
             <div className="title-and-subtitle">
               <div className="header-logo-container"><img className="header-logo" src={logo} alt="logo"></img></div>
@@ -28,6 +20,14 @@ function Header() {
               <h2 className="subtitle">Personal Website</h2>
             </div>
           </a>
+          <button
+            className="dropdown-burger"
+            aria-label="Toggle Menu"
+            onClick={() => {
+              toggleMenuExpansion(!menuExpanded);
+            }}
+          ><i className={`fa dropdown-burger-symbol ${!menuExpanded ? "fa-bars" : "fa-times"}`}></i>
+          </button>
           <div className="nav-header">
             <ButtonHeader
               textValue="Home"

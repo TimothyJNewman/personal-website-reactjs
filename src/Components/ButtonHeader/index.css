@@ -20,9 +20,3 @@
   background-size: 0 0em, 100% 0.2em;
   color: var(--secondarycolour-l1);
 }
-
-@media only screen and (max-width: 800px) {
-  .button-header-wrapper {
-    display: none;
-  }
-}

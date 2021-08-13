@@ -73,7 +73,7 @@
 
 .header-wrapper {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   margin-right: auto;
   margin-left: auto;
@@ -101,6 +101,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+  .nav-header {
+    display: none;
   }
 }
 
