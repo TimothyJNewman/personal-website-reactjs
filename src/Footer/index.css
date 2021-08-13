@@ -13,3 +13,17 @@
   margin: 0 auto 0 auto;
   padding: 0.5em;
 }
+
+.footer-link {
+  color: inherit;
+  background: linear-gradient(var(--secondarycolour-l0), var(--secondarycolour-l0)), linear-gradient(var(--secondarycolour-l0), var(--secondarycolour-l0));
+  background-size: 100% 0.15em, 0 1em;
+  background-position: 0% 100%, 0% 100%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms, color 400ms;
+}
+
+.footer-link:hover, .footer-link:focus {
+  background-size: 0 0.1em, 100% 1.2em;
+  color: var(--primarycolour-l5);
+}
