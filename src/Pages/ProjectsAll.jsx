@@ -99,9 +99,9 @@ const ProjectAll = () => {
           }}
         </Query>
         <div className="posts-navigation-container">
-          <button className="posts-navigation-button" onClick={handlePageNavClick.bind(this, -1)}><i className="fa fa-arrow-circle-left"></i> Prev</button>
+          <button className="posts-navigation-button" onClick={handlePageNavClick.bind(this, -2)}><i className="fa fa-arrow-circle-left"></i> Prev</button>
           {getNavPageNumbers(articleCount, handlePageNavClick)}
-          <button className="posts-navigation-button" onClick={handlePageNavClick.bind(this, -2)}>Next <i className="fa fa-arrow-circle-right"></i></button>
+          <button className="posts-navigation-button" onClick={handlePageNavClick.bind(this, -1)}>Next <i className="fa fa-arrow-circle-right"></i></button>
         </div>
       </div>
     </>

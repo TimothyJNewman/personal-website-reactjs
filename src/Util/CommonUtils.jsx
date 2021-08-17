@@ -15,14 +15,14 @@ const getFormattedLink = (hostname, path) => {
 const getNewCurrentArticleStart = (navCode, currentArticleStart, articleCount) => {
     let newCurrentArticleStart = currentArticleStart;
     // navCode for prev page
-    if (navCode === -1) {
+    if (navCode === -2) {
         if (currentArticleStart >= 4) {
             newCurrentArticleStart = currentArticleStart - 4;
         } else {
             newCurrentArticleStart = 0;
         }
     // navCode for next page
-    } else if (navCode === -2) {
+    } else if (navCode === -1) {
         if (currentArticleStart + 4 < articleCount) {
             newCurrentArticleStart = currentArticleStart + 4;
         }

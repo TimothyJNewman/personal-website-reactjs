@@ -2,13 +2,13 @@
 
 //Just alphabets and numbers
 const sanitize = (str) => {
-  return str.replace(/[^a-zA-Z0-9]/g, '');
+  return str.replace(/[^a-zA-Z0-9\s]/g, '');
 };
 
-//Removes special characters except .,?!
+//Removes special characters except .,?!()
 const sanitizeKeepUnicode = (str) => {
   // eslint-disable-next-line
-  return str.replace(/[`~@#$%^&*()_|+\-=;:'"<>\{\}\[\]\\\/]/gi, '');
+  return str.replace(/[`~@#$%^&*_|+\-=;:'"<>\{\}\[\]\\\/]/gi, '');
 };
 
 //Username & Email
