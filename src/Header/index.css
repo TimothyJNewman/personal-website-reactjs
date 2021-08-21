@@ -24,7 +24,7 @@
 
 .title {
   display: inline;
-  font-size: calc(15px + 3vmin);
+  font-size: 2em;
   color: var(--primarycolour-l6);
   margin: 20px 0px 20px 0px;
   text-align: center;
