@@ -121,7 +121,7 @@ class Contact extends React.Component {
             .then(checkStatus)
             .then((resp) => (resp) ? this.setState({ isSubmitSuccessful: 1, modifiedData: initalInputState }) : "")
         } catch (error) {
-          this.setState({ error, isSubmitSuccessful: 0 });
+          this.setState({ isSubmitSuccessful: 0 });
         }
       } else {
         this.setState({ isSubmitSuccessful: -1 });
