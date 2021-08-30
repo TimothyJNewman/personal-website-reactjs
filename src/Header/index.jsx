@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import ButtonHeader from '../Components/ButtonHeader/index';
 import Nav from '../DropdownMenu/index';
 import SmoothCollapse from "react-smooth-collapse";
-import logo from "../logo.svg";
+import logo from "../Images/logo.svg";
 
 function Header() {
   const [menuExpanded, toggleMenuExpansion] = useState(false);
