@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import CoverImage from '../CoverImage/index';
 
 class Page404 extends React.Component {
@@ -11,9 +12,9 @@ class Page404 extends React.Component {
             <h2>404 Error</h2>
             <p>
               {window.location.pathname === "/page404"
-              ? `The requested url is not available. `
-              : `The requested url <a href=${window.location.href}>${window.location.href}</a> is not available. `
-              }Please <a href="/">click here</a> to return to the home page.</p>
+            ? <>The requested url is not available. </>
+            : <>The requested url <Link to={window.location.href}>{window.location.href}</Link> is not available. </>
+              }Please <Link to="/">click here</Link> to return to the home page.</p>
           </div>
         </div>
       </>

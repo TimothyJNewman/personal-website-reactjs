@@ -14,7 +14,7 @@ const Home = () => {
         id
         title
         coverimage{
-          formats
+          url
         }
         published_at
         slug
@@ -87,7 +87,7 @@ const Home = () => {
                   ? data.projectposts.map(posts => (
                     <Link to={getFormattedLink("/projects/", posts.slug)} key={posts.id}>
                       <Card
-                        img={posts.coverimage ? posts.coverimage.formats.medium.url : ""}
+                        img={posts.coverimage ? posts.coverimage.url : ""}
                         title={posts.title}
                         date={getFormattedDate(posts.published_at)}
                         description={posts.summary}

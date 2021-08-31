@@ -83,7 +83,7 @@ const ProjectAll = () => {
                     <Link to={getFormattedLink("/projects/", posts.slug)} key={posts.id}>
                       <Card
                         title={posts.title}
-                        img={posts.coverimage ? posts.coverimage.formats.medium.url : ""}
+                        img={posts.coverimage ? posts.coverimage.url : ""}
                         date={getFormattedDate(posts.published_at)}
                         description={posts.summary}
                         tag1={posts.tags[0] ? posts.tags[0].Tag : false}

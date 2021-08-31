@@ -86,7 +86,7 @@ const PhotosAll = () => {
                   ? data.galleries.map(posts => (
                     <Link to={getFormattedLink("/photos/", posts.slug)} key={posts.id}>
                       <Card
-                        img={posts.coverimage ? posts.coverimage.formats.medium.url : ""}
+                        img={posts.coverimage ? posts.coverimage.url : ""}
                         title={posts.title}
                         date={getFormattedDate(posts.published_at)}
                         description={posts.description}

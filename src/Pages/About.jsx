@@ -30,7 +30,7 @@ const About = () => {
                 {data.aboutpagecontent
                 ? <>
                     {data.aboutpagecontent.coverimage
-                      ? <CoverImage src={data.aboutpagecontent.coverimage.formats.medium.url} title={data.aboutpagecontent.title} />
+                      ? <CoverImage src={data.aboutpagecontent.coverimage.url} title={data.aboutpagecontent.title} />
                       : <CoverImage title={data.aboutpagecontent.title} />}
                     <div className="content-wrapper content-text">
                       <div className="markdown-text">

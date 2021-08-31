@@ -35,7 +35,7 @@ const Photos = () => {
           return (
             <div className="medium-col">
               {data.galleries[0].coverimage
-                ? <CoverImage src={data.galleries[0].coverimage.formats.medium.url} title={data.galleries[0].title} />
+                ? <CoverImage src={data.galleries[0].coverimage.url} title={data.galleries[0].title} />
                 : <CoverImage title={data.galleries[0].title} />}
               <div className="content-wrapper">
                 <div className="article-date-and-tags">

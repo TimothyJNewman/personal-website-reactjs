@@ -13,7 +13,7 @@ const Projects = () => {
       projectposts( where: {slug: $slug }) {
         id
         coverimage{
-          formats
+          url
         }
         title
         content
@@ -37,7 +37,7 @@ const Projects = () => {
           return (
             <div className="medium-col">
               {data.projectposts[0].coverimage
-                ? <CoverImage src={data.projectposts[0].coverimage.formats.medium.url} title={data.projectposts[0].title} />
+                ? <CoverImage src={data.projectposts[0].coverimage.url} title={data.projectposts[0].title} />
                 : <CoverImage title={data.projectposts[0].title} />}
               <div className="content-wrapper content-text">
                 <div className="article-date-and-tags">

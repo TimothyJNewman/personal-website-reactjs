@@ -55,7 +55,7 @@ const TagPage = () => {
                     {data.projectposts.map(posts => (
                       <Link to={getFormattedLink("/projects/", posts.slug)} key={posts.id}>
                         <Card
-                          img={posts.CoverImage ? posts.CoverImage.formats.medium.url : ""}
+                          img={posts.CoverImage ? posts.CoverImage.url : ""}
                           title={posts.title}
                           date={getFormattedDate(posts.published_at)}
                           description={posts.summary}
